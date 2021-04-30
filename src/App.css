@@ -21,6 +21,7 @@
   background-color: var(--grey);
   height: 100vh;
   overflow: scroll;
+  text-align: center;
 }
 
 .title {
@@ -35,6 +36,10 @@
   padding-right: 4em;
   padding-top: 2em;
   padding-bottom: 2em;
+}
+
+.home-description p {
+  text-align: left;
 }
 
 /* Media queries for responsive design */

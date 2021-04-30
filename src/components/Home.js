@@ -1,13 +1,21 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
 
 const Home = () => {
     return (
-        <div>
-            <img src="https://i.ibb.co/DQKnM4h/dripping-birdbath.png" alt="Bird sitting on a birdbath with water dripping off it." />
-            <p>
-                This is the home page!
-            </p>
-        </div>
+        <Container>
+            <Col>
+                <Row>
+                    <Image className="main-image" src="https://i.ibb.co/njyy1r3/blue-bowl.png" alt="Bowl of water on a fence post in a field." />
+                </Row>
+                <Row>
+                    <p>This is the home page!</p>
+                </Row>
+            </Col>
+        </Container>
     )
 }
 

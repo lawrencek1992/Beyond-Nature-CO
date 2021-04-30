@@ -1,10 +1,14 @@
+/* Overall styling */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
 :root {
   --grey: #343a40;
   --white: #fff;
 }
 
+/* Main styles */
 /* .App {
-
+????
 } */
 
 .main-image {
@@ -16,4 +20,21 @@
   color: var(--white);
   background-color: var(--grey);
   height: 100vh;
+  overflow: scroll;
 }
+
+.title {
+  font-family: 'Parisienne', cursive;
+  padding-top: 1em;
+  font-size: 4em;
+  text-align: center;
+}
+
+.home-description {
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/* Media queries for responsive design */

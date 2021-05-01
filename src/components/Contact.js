@@ -10,16 +10,10 @@ const Contact = () => {
         <Container className="contact-container" fluid>
             <h1>Contact Section</h1>
             <p>Look, a contact page!</p>
-
-
-            {/* Open this in a new tab instead! */}
-            <a href="https://www.instagram.com/beyondnatureco/" className="link-info">
+            <a target="_blank" href="https://www.instagram.com/beyondnatureco/" className="link-info" rel="noreferrer">
                 <FontAwesomeIcon icon={faInstagram} />
             </a>
-
-            
-             {/* Open this in a new tab instead! */}
-            <a href="https://www.facebook.com/BeyondNatureCO/" className="link-info">
+            <a target="_blank" href="https://www.facebook.com/BeyondNatureCO/" className="link-info" rel="noreferrer">
                 <FontAwesomeIcon icon={faFacebookSquare} />
             </a>
             <p>Email Address Here!</p>

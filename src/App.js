@@ -1,3 +1,10 @@
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -7,11 +14,23 @@ import Contact from './components/Contact.js';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <Header />
-      <Home />
-      <Contact />
-    </div>
+        <Switch>
+          <Route 
+            exact
+            path="/"
+            render={() => <Home />} 
+          />
+          <Route 
+            exact
+            path="/contact"
+            render={() => <Contact />}
+          />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

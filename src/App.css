@@ -10,7 +10,7 @@
 /* .App {
 ????
 } */
-
+/* Home */
 .main-image {
   width: 100%;
 }
@@ -40,6 +40,11 @@
 
 .home-description p {
   text-align: left;
+}
+
+/* Contact */
+.contact-container {
+  padding-top: 5em;
 }
 
 /* Media queries for responsive design */

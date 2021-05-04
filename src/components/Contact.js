@@ -11,7 +11,11 @@ const Contact = () => {
     return (
         <Container className="contact-container text-center" fluid>
             <h1 className="mb-4 mt-5" id="contact-header">Contact</h1>
-            <p className="mb-5 mt-3">Please reach out if you'd like to purchase one of my pieces!</p>
+            <p className="mb-5 mt-3">
+                Please reach out if you'd like to purchase one of our pieces!
+                <br/>
+                You can see the pieces we currently have avaliable on our Instagram and Facebook pages. 
+            </p>
             <Row className="pb-5">
                 <Col xs={12} className="mb-2">
                     <b>Email: </b>

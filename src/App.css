@@ -10,6 +10,12 @@
 /* .App {
 ????
 } */
+
+#test {
+  background-color: red;
+}
+
+
 /* Home */
 .main-image {
   width: 100%;
@@ -46,6 +52,15 @@
 /* Contact */
 .contact-container {
   padding-top: 5em;
+}
+
+#contact-header {
+  font-family: 'Parisienne', cursive;
+  font-size: 4em;
+}
+
+.icon {
+  font-size: 3em;
 }
 
 /* Media queries for responsive design */

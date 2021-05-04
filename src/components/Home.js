@@ -1,11 +1,12 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
+import blueBowl from '../photos/blue-bowl.png'
 
 const Home = () => {
     return (
         <Container className="home-container" fluid >
-            <Image className="main-image" src="https://i.ibb.co/njyy1r3/blue-bowl.png" fluid />
+            <Image className="main-image" src={blueBowl} fluid />
             <h1 className="title">Beyond Nature CO</h1>
             <div className="home-description">
                 <p>

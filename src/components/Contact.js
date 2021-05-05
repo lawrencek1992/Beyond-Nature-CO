@@ -21,7 +21,7 @@ const Contact = () => {
                     <b>Email: </b>
                     beyondnatureco@gmail.com
                 </Col>
-                <Col xs={12}>
+                <Col xs={12} >
                     <b>Phone: </b>
                     (231) 690-1165
                 </Col>

@@ -4,23 +4,42 @@
 :root {
   --grey: #343a40;
   --white: #fff;
+  --tan: #8a6537;
+  --cyan: #72E1EB;
 }
 
 /* Main styles */
-/* .App {
-????
-} */
+.App {
+ background-color: var(--tan);
+}
 
 #test {
   background-color: red;
 }
 
+.navbar-custom {
+  background-color: var(--tan);
+  border-bottom: solid var(--cyan) 1px;
+}
+
+.navlink-custom {
+  color: var(--white) !important;
+}
+
+.navlink-custom:hover {
+  color: var(--cyan) !important;
+}
+
+.navbar-toggle {
+  color: var(--cyan);
+}
 
 /* Home */
 
 .carousel {
-  margin-top: 50px;
+  margin-top: 45px;
   max-height: 100%;
+  border-bottom: solid var(--cyan) 1px;
 }
 
 .carousel-item {
@@ -35,7 +54,6 @@
 .home-container {
   padding: 0;
   color: var(--white);
-  background-color: var(--grey);
   height: 100vh;
   overflow: scroll;
   text-align: center;
@@ -57,13 +75,13 @@
 
 .home-description p {
   text-align: left;
+  color: var(--cyan);
 }
 
 /* Contact */
 .contact-container {
   padding-top: 5em;
   color: var(--white);
-  background-color: var(--grey);
   height: 100vh;
   overflow: scroll;
 }
@@ -71,10 +89,16 @@
 #contact-header {
   font-family: 'Parisienne', cursive;
   font-size: 4em;
+  color: var(--cyan);
 }
 
 .icon {
   font-size: 3em;
+  color: var(--cyan);
+}
+
+.icon:hover {
+  font-size: 3.5em;
 }
 
 /* Media queries for responsive design */

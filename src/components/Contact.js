@@ -33,7 +33,7 @@ const Contact = () => {
                     </a>
                 </Col>
                 <Col xs={1}>
-                    <a target="_blank" href="https://www.facebook.com/BeyondNatureCO/" className="link-info" rel="noreferrer">
+                    <a target="_blank" href="https://www.facebook.com/BeyondNatureCO/" className="link-info m-3" rel="noreferrer">
                         <FontAwesomeIcon icon={faFacebookSquare} className="icon"/>
                     </a>
                 </Col>

@@ -28,6 +28,7 @@
 
 .navlink-custom:hover {
   color: var(--cyan) !important;
+  font-size: 1.1em;
 }
 
 .navbar-toggle {
@@ -59,23 +60,11 @@
   text-align: center;
 }
 
-.title {
-  font-family: 'Parisienne', cursive;
-  padding-top: 1em;
-  font-size: 4em;
-  text-align: center;
-}
-
 .home-description {
   padding-left: 4em;
   padding-right: 4em;
   padding-top: 2em;
   padding-bottom: 2em;
-}
-
-.home-description p {
-  text-align: left;
-  color: var(--cyan);
 }
 
 /* Contact */

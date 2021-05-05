@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -11,7 +10,7 @@ import './App.css';
 import Header from './components/Header.js';
 import Home from './components/Home.js';
 import Contact from './components/Contact.js';
-import Highlights from './components/Highlights';
+import Highlights from './components/Highlights.js';
 
 function App() {
   return (

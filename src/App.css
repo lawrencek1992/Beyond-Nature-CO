@@ -11,6 +11,7 @@
 /* Main styles */
 .App {
  background-color: var(--tan);
+ color: var(--white);
 }
 
 #test {
@@ -36,7 +37,6 @@
 }
 
 /* Home */
-
 .carousel {
   margin-top: 45px;
   max-height: 100%;
@@ -88,6 +88,15 @@
 
 .icon:hover {
   font-size: 3.5em;
+}
+
+/* Highlights */
+.highlights {
+  height: 100vh;
+}
+
+.highlights-description {
+
 }
 
 /* Media queries for responsive design */

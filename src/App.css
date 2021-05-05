@@ -17,9 +17,19 @@
 
 
 /* Home */
+
+.carousel {
+  margin-top: 50px;
+  max-height: 100%;
+}
+
+.carousel-item {
+  max-height: 90vh;
+}
+
 .main-image {
-  width: 100%;
-  max-height: 70vh;
+  height: auto;
+  object-fit: contain;
 }
 
 .home-container {

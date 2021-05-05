@@ -11,6 +11,7 @@ import './App.css';
 import Header from './components/Header.js';
 import Home from './components/Home.js';
 import Contact from './components/Contact.js';
+import Highlights from './components/Highlights';
 
 function App() {
   return (
@@ -27,6 +28,11 @@ function App() {
             exact
             path="/contact"
             render={() => <Contact />}
+          />
+          <Route
+            exact
+            path="/highlights"
+            render={() => <Highlights />}
           />
         </Switch>
       </div>

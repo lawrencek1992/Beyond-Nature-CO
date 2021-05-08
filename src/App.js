@@ -6,13 +6,14 @@ import {
 } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import firebase from "./firebase";
 
 import Header from './components/Header.js';
 import Home from './components/Home.js';
 import Contact from './components/Contact.js';
 import Highlights from './components/Highlights.js';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div className="App">

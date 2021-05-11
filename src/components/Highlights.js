@@ -10,6 +10,7 @@ const db = firebase.firestore();
 function Highlights() {
     const [photos, setPhotos] = useState([]);
     const [lastPhoto, setLastPhoto] = useState([]);
+    // Probably getting rid of this also....
     const [photosLoading, setPhotosLoading] = useState(false);
     
     const photosFirstBatch = async () => {
@@ -29,40 +30,67 @@ function Highlights() {
     };
 
     const photosNextBatch = async (lastIndex) => {
-        const response = db
-            .collection("highlights-photos")
-            .orderBy("index", "asc")
-            .startAfter(lastIndex)
-            .limit(3);
-        const data = await response.get();
-        const morePhotos = [...photos];
-        let lastPhoto = "";
-        data.docs.forEach((doc) => {
-            morePhotos.push(doc.data());
-            lastPhoto = doc.data();
-        });
-        setPhotos(morePhotos);
-        setLastPhoto(lastPhoto.index);
-        return { morePhotos, lastPhoto };
+        // You will have to change this to a higher number once you upload all of the photos to firestore! Don't forget!!!!
+        if (lastIndex < 11) {
+            const response = db
+                .collection("highlights-photos")
+                .orderBy("index", "asc")
+                .startAfter(lastIndex)
+                .limit(3);
+            const data = await response.get();
+            const morePhotos = [...photos];
+            let lastPhoto = "";
+            data.docs.forEach((doc) => {
+                morePhotos.push(doc.data());
+                lastPhoto = doc.data();
+            });
+            setPhotos(morePhotos);
+            setLastPhoto(lastPhoto.index);
+            return { morePhotos, lastPhoto };
+        }
+        // Yo, this if statement isn't firing though....
+        else {
+            return (
+                <div className="text-center">
+                    End of photos!
+                </div>
+            )
+        }
     };
 
+    // Probably getting rid of this.....
+
+    // const fetchMorePhotos = (currentIndex) => {
+    //     setPhotosLoading(true);
+    //     photosNextBatch(currentIndex)
+    //         .then((res) => {
+    //             setLastPhoto(res.lastPhoto.index);
+    //             setPhotos(photos.concat(res.morePhotos));
+    //             setPhotosLoading(false);
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //             setPhotosLoading(false);
+    //         })
+    // }
+
     const fetchMorePhotos = (currentIndex) => {
-        setPhotosLoading(true);
-        photosNextBatch(currentIndex)
-            .then((res) => {
-                setLastPhoto(res.lastPhoto.index);
-                setPhotos(photos.concat(res.morePhotos));
-                setPhotosLoading(false);
-            })
-            .catch((err) => {
-                console.log(err);
-                setPhotosLoading(false);
-            })
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            console.log("You're at the bottom of the page!");
+            photosNextBatch(lastPhoto);
+        };
     }
 
     useEffect(() => {
         photosFirstBatch();
     }, []);
+
+    useEffect(() => {
+        window.addEventListener("scroll", fetchMorePhotos);
+        return () => {
+            window.removeEventListener("scroll", fetchMorePhotos);
+        }
+    })
 
     return (
         <Container className="mt-5 pt-4" fluid>
@@ -78,13 +106,14 @@ function Highlights() {
                 })
             }
             </Container>
+            {/* Maybe add conditional stuff down here to render some sort of prompt to contact Kayla and buy her pieces (which also clues in the user that there are no more photos). */}
             <div className="text-center">
                 {/* {photosLoading 
                     ? (<p>Loading..</p>) 
                     : lastPhoto.length > 0 
                         ? ( */}
                             
-                            <button onClick={() => photosNextBatch(lastPhoto)}>More Photos</button>
+                            {/* <button onClick={() => photosNextBatch(lastPhoto)}>More Photos</button> */}
                         
                         {/* )  */}
                     {/* : (<span>You are up to date!</span>)

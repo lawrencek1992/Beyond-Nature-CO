@@ -9,20 +9,60 @@ const db = firebase.firestore();
 
 function Highlights() {
     const [photos, setPhotos] = useState([]);
+    const [lastPhoto, setLastPhoto] = useState([]);
+    const [photosLoading, setPhotosLoading] = useState(false);
     
-    const fetchPhotos = async () => {
-        const response = db.collection("highlights-photos");
+    const photosFirstBatch = async () => {
+        const response = db
+            .collection("highlights-photos")
+            .orderBy("index", "asc")
+            .limit(3);
         const data = await response.get();
         const photos = [];
+        let lastPhoto = "";
         data.docs.forEach((doc) => {
             photos.push(doc.data());
+            lastPhoto = doc.data(); 
         });
         setPhotos(photos);
+        setLastPhoto(lastPhoto.index);
     };
 
+    const photosNextBatch = async (lastIndex) => {
+        const response = db
+            .collection("highlights-photos")
+            .orderBy("index", "asc")
+            .startAfter(lastIndex)
+            .limit(3);
+        const data = await response.get();
+        const morePhotos = [...photos];
+        let lastPhoto = "";
+        data.docs.forEach((doc) => {
+            morePhotos.push(doc.data());
+            lastPhoto = doc.data();
+        });
+        setPhotos(morePhotos);
+        setLastPhoto(lastPhoto.index);
+        return { morePhotos, lastPhoto };
+    };
+
+    const fetchMorePhotos = (currentIndex) => {
+        setPhotosLoading(true);
+        photosNextBatch(currentIndex)
+            .then((res) => {
+                setLastPhoto(res.lastPhoto.index);
+                setPhotos(photos.concat(res.morePhotos));
+                setPhotosLoading(false);
+            })
+            .catch((err) => {
+                console.log(err);
+                setPhotosLoading(false);
+            })
+    }
+
     useEffect(() => {
-        fetchPhotos();
-    }, [])
+        photosFirstBatch();
+    }, []);
 
     return (
         <Container className="mt-5 pt-4" fluid>
@@ -33,11 +73,23 @@ function Highlights() {
             {
                 photos && photos.map(photo => {
                     return (
-                        <Image className="col-4 mb-4" key={photo} src={photo.url} alt={photo.alt} fluid />
+                        <Image className="col-4 mb-4" key={photo.index} src={photo.url} alt={photo.alt} fluid />
                     )
                 })
             }
             </Container>
+            <div className="text-center">
+                {/* {photosLoading 
+                    ? (<p>Loading..</p>) 
+                    : lastPhoto.length > 0 
+                        ? ( */}
+                            
+                            <button onClick={() => photosNextBatch(lastPhoto)}>More Photos</button>
+                        
+                        {/* )  */}
+                    {/* : (<span>You are up to date!</span>)
+                } */}
+            </div>
         </Container>
     )
 }

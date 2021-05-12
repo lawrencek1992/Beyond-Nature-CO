@@ -11,14 +11,14 @@ const db = firebase.firestore();
 function Highlights() {
     const [photos, setPhotos] = useState([]);
     const [lastPhoto, setLastPhoto] = useState([]);
-    // Probably getting rid of this also....
     const [photosLoading, setPhotosLoading] = useState(false);
     
     const photosFirstBatch = async () => {
+        setPhotosLoading(true);
         const response = db
             .collection("highlights-photos")
             .orderBy("index", "asc")
-            .limit(3);
+            .limit(8);
         const data = await response.get();
         const photos = [];
         let lastPhoto = "";
@@ -27,17 +27,17 @@ function Highlights() {
             lastPhoto = doc.data(); 
         });
         setPhotos(photos);
+        setPhotosLoading(false);
         setLastPhoto(lastPhoto.index);
     };
 
     const photosNextBatch = async (lastIndex) => {
-        // You will have to change this to a higher number once you upload all of the photos to firestore! Don't forget!!!!
-        if (lastIndex < 65) {
+        if (lastIndex <= 82) {
             const response = db
                 .collection("highlights-photos")
                 .orderBy("index", "asc")
                 .startAfter(lastIndex)
-                .limit(3);
+                .limit(8);
             const data = await response.get();
             const morePhotos = [...photos];
             let lastPhoto = "";
@@ -48,12 +48,12 @@ function Highlights() {
             setPhotos(morePhotos);
             setLastPhoto(lastPhoto.index);
             return { morePhotos, lastPhoto };
-        }
+        } 
     };
 
     const fetchMorePhotos = (currentIndex) => {
+        // When you scroll to the bottom of the page
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            console.log("You're at the bottom of the page!");
             photosNextBatch(lastPhoto);
         };
     }
@@ -70,7 +70,7 @@ function Highlights() {
     })
 
     return (
-        <Container className="mt-5 pt-4" fluid>
+        <Container className="mt-5 pt-4 highlights-container" fluid>
             <h1 className="text-center pb-3">
                 Highlights
             </h1>
@@ -78,17 +78,19 @@ function Highlights() {
             {
                 photos && photos.map(photo => {
                     return (
-                        <Image className="col-4 mb-4" key={photo.index} src={photo.url} alt={photo.alt} fluid />
+                        <Image className="col-3 mb-4" key={photo.index} src={photo.url} alt={photo.alt} fluid />
                     )
                 })
             }
             </Container>
-            { lastPhoto === 64 && 
-            <div className="text-center">
+            {/* Put the end message here! */}
+            {/*  { lastPhoto === NUMBER && (
+                <div className="text-center">
                 <p>
                     Contact me <Link to="/contact" className="highlights-link">here</Link> to inquire about our current inventory! 
                 </p>
-            </div>}
+            </div>
+            )} */}
         </Container>
     )
 }

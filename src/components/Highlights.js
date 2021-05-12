@@ -11,7 +11,7 @@ const db = firebase.firestore();
 function Highlights() {
     const [photos, setPhotos] = useState([]);
     const [lastPhoto, setLastPhoto] = useState([]);
-    const [photosLoading, setPhotosLoading] = useState(false);
+    const [photosLoading, setPhotosLoading] = useState(true);
     
     const photosFirstBatch = async () => {
         setPhotosLoading(true);
@@ -32,7 +32,8 @@ function Highlights() {
     };
 
     const photosNextBatch = async (lastIndex) => {
-        if (lastIndex <= 82) {
+        if (lastIndex <= 85) {
+            setPhotosLoading(true);
             const response = db
                 .collection("highlights-photos")
                 .orderBy("index", "asc")
@@ -46,6 +47,7 @@ function Highlights() {
                 lastPhoto = doc.data();
             });
             setPhotos(morePhotos);
+            setPhotosLoading(false);
             setLastPhoto(lastPhoto.index);
             return { morePhotos, lastPhoto };
         } 
@@ -83,14 +85,28 @@ function Highlights() {
                 })
             }
             </Container>
-            {/* Put the end message here! */}
-            {/*  { lastPhoto === NUMBER && (
-                <div className="text-center">
+            {/* Loading icon */}
+            {lastPhoto < 85
+            ? (<div className="lds-default">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>)
+            : (<div className="text-center pb-3 highlights-message">
                 <p>
-                    Contact me <Link to="/contact" className="highlights-link">here</Link> to inquire about our current inventory! 
+                    Contact us <Link to="/contact" className="highlights-link">here</Link> to inquire about our current inventory! 
                 </p>
-            </div>
-            )} */}
+            </div>)
+            }
         </Container>
     )
 }

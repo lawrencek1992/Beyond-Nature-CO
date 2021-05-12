@@ -71,7 +71,7 @@ function Highlights() {
 
     return (
         <Container className="mt-5 pt-4 highlights-container" fluid>
-            <h1 className="text-center pb-3">
+            <h1 className="text-center pb-3 highlights-title">
                 Highlights
             </h1>
             <Container className="row" fluid>

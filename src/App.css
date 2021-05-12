@@ -5,6 +5,7 @@
   --grey: #343a40;
   --white: #fff;
   --tan: #8a6537;
+  --light-tan: #c48e4d;
   --cyan: #72E1EB;
 }
 
@@ -62,6 +63,7 @@
 .about {
   font-family: 'Parisienne', cursive;
   font-size: 5em;
+  color: var(--cyan);
 }
 
 .home-container {
@@ -121,6 +123,12 @@
   width: 100vw;
   color: var(--white);
   background-color: var(--tan);
+}
+
+.highlights-title {
+  font-family: 'Parisienne', cursive;
+  font-size: 5em;
+  color: var(--cyan);
 }
 
 .highlights-link {

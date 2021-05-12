@@ -11,10 +11,8 @@ const db = firebase.firestore();
 function Highlights() {
     const [photos, setPhotos] = useState([]);
     const [lastPhoto, setLastPhoto] = useState([]);
-    const [photosLoading, setPhotosLoading] = useState(true);
     
     const photosFirstBatch = async () => {
-        setPhotosLoading(true);
         const response = db
             .collection("highlights-photos")
             .orderBy("index", "asc")
@@ -27,13 +25,11 @@ function Highlights() {
             lastPhoto = doc.data(); 
         });
         setPhotos(photos);
-        setPhotosLoading(false);
         setLastPhoto(lastPhoto.index);
     };
 
     const photosNextBatch = async (lastIndex) => {
         if (lastIndex <= 85) {
-            setPhotosLoading(true);
             const response = db
                 .collection("highlights-photos")
                 .orderBy("index", "asc")
@@ -47,7 +43,6 @@ function Highlights() {
                 lastPhoto = doc.data();
             });
             setPhotos(morePhotos);
-            setPhotosLoading(false);
             setLastPhoto(lastPhoto.index);
             return { morePhotos, lastPhoto };
         } 

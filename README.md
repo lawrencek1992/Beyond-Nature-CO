@@ -1,3 +1,17 @@
+Sources: 
+*https://loading.io/css/ 
+for the loading icon
+
+*https://dev.to/hadi/infinite-scroll-in-firebase-firestore-and-react-js-55g3 
+for help writing functions to pull photos from firestore
+
+*https://stackoverflow.com/questions/54508693/detect-bottom-of-page-to-fetch-more-data-in-react
+for the function fetchMorePosts() that detects when a user scrolls to the bottom of the page
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -46,9 +46,22 @@
   max-height: 90vh;
 }
 
+.carousel-control-prev-icon {
+  color: black !important;
+}
+
+.carousel-control-next-icon {
+  color: black !important;
+}
+
 .main-image {
   height: auto;
   object-fit: contain;
+}
+
+.about {
+  font-family: 'Parisienne', cursive;
+  font-size: 5em;
 }
 
 .home-container {
@@ -59,6 +72,10 @@
   text-align: center;
 }
 
+.about-container {
+  text-align: center !important;
+}
+
 .home-description {
   padding-left: 4em;
   padding-right: 4em;
@@ -67,8 +84,7 @@
 }
 
 .headshot {
-  max-width: 35vw;
-  height: auto;
+  max-width: 25vw;
 }
 
 .caption {

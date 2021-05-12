@@ -15,18 +15,19 @@ import Contact from './components/Contact.js';
 import Highlights from './components/Highlights.js';
 import Login from './components/Login/js';
 
-const App = () => {
+const App = (props) => {
 
   const onLogin = (email, password) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-  // Do you want to do anything with state to display a user thing like you did with you blog?
       // .then((response) => {
 
       // Do you want a login message? Write one....
     // setFlashMessage(`login`);
 
+
+    // Do you want to do anything with state to display a user thing like you did with you blog?
       //   if (response.user["email"].includes("demo")) {
       //     setUser({
       //       email: response.user["email"],

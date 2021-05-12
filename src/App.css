@@ -40,7 +40,6 @@
 .carousel {
   margin-top: 45px;
   max-height: 100%;
-  border-bottom: solid var(--cyan) 1px;
 }
 
 .carousel-item {
@@ -65,6 +64,15 @@
   padding-right: 4em;
   padding-top: 2em;
   padding-bottom: 2em;
+}
+
+.headshot {
+  max-width: 35vw;
+  height: auto;
+}
+
+.caption {
+  font-size: 0.8em;
 }
 
 /* Contact */
@@ -97,4 +105,12 @@
   background-color: var(--tan);
 }
 
+.highlights-link {
+  color: var(--cyan);
+}
+
+.highlights-link:hover {
+  font-size: 1.2em;
+  color: var(--cyan);
+}
 /* Media queries for responsive design */

@@ -13,7 +13,7 @@ import Header from './components/Header.js';
 import Home from './components/Home.js';
 import Contact from './components/Contact.js';
 import Highlights from './components/Highlights.js';
-import Login from './components/Login/js';
+import Login from './components/Login.js';
 
 const App = (props) => {
 

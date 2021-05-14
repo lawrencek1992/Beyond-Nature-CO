@@ -127,7 +127,7 @@
 
 .highlights-title {
   font-family: 'Parisienne', cursive;
-  font-size: 5em;
+  font-size: 4em;
   color: var(--cyan);
 }
 
@@ -229,6 +229,19 @@
   50% {
     transform: scale(1.5);
   }
+}
+
+/* Login */
+.login-container{
+  height: 100vh;
+}
+
+.email-input {
+  width: 35vw;
+}
+
+.password-input {
+  width: 35vw;
 }
 
 /* Media queries for responsive design */

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
-import firebase from "../firebase.js";
 import UserContext from '../context/UserContext';
 
 const Login = (props) => {
@@ -14,17 +13,13 @@ const Login = (props) => {
         event.preventDefault();
         onLogin(email, password);
         console.log("You're logged in!");
-    };
-
-    const handleCancel = (event) => {
-        event.preventDefault();
         return (
-            <Redirect to="/" />
-        );
+            <Redirect to="/"/>
+        )
     };
 
     return (
-        <form className="login-container mt-5 pt-5 ml-5 pl-5" name="login" onSubmit={() => handleLogin}>
+        <form className="login-container mt-5 pt-5 ml-5 pl-5" name="login" onSubmit={handleLogin}>
             <p>
                 <label htmlFor="email">Email:</label>
                 <br />
@@ -37,7 +32,7 @@ const Login = (props) => {
             </p>
             <p>
                 <Button className="btn btn-info mr-3" type="submit" disabled={!email && !password}>Login</Button>
-                <Button className="btn btn-secondary" type="cancel" onClick={() => handleCancel}>Cancel</Button>
+                <Link className="btn btn-secondary" type="cancel" to="/">Cancel</Link>
             </p>
         </form>
     )

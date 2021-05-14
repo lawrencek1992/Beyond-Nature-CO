@@ -8,11 +8,27 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 const Header = (props) => {
   const { user, onLogout } = useContext(UserContext);
 
+  const handleLogout = (event) => {
+    event.preventDefault();
+    console.log("You're logged out!");
+  }
+
   return (
-      <Navbar collapseOnSelect fixed="top" expand="true" className="navbar-custom" variant="dark" >
+      <Navbar collapseOnSelect fixed="top" expand="true" className="navbar-custom pb-2" variant="dark" >
       <Navbar.Toggle aria-controls="basic-navbar-nav" id="navbar-toggle">
         <FontAwesomeIcon icon={faBars} className="navbar-toggle" />
       </Navbar.Toggle>
+      {user.isAuthenticated
+            ? <button className="login-link link-like ml-0 pl-0     pt-2 pb-2" onClick={(event) => {
+              event.preventDefault();
+              onLogout();
+            }}>
+            Logout
+            </button>
+            : <Nav.Link href="/login" className="login-link">
+              Login
+            </Nav.Link>
+          }
       <Navbar.Collapse>
         <Nav className="mr-auto">
           <Nav.Link href="/" className="navlink-custom">
@@ -24,17 +40,6 @@ const Header = (props) => {
           <Nav.Link href="/contact" className="navlink-custom">
             Contact
           </Nav.Link>
-          {!user.isAuthenticated && 
-            <Nav.Link href="/login" className="navlink-custom">
-            Login
-            </Nav.Link>
-          }
-          {user.isAuthenticated &&
-            <button className="navLink-custom link-like ml-0 pl-0 pt-2" onClick={(event) => {
-            event.preventDefault();
-            onLogout();
-            }}>Logout</button>
-          }
         </Nav>
       </Navbar.Collapse>
     </Navbar>

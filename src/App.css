@@ -35,6 +35,14 @@
   font-size: 1.1em;
 }
 
+.login-link {
+  color: var(--white);
+}
+
+.login-link:hover {
+  color: var(--cyan);
+}
+
 .navbar-toggle {
   color: var(--cyan);
 }
@@ -48,8 +56,22 @@
 
 .link-like:hover {
   color: var(--cyan);
-  font-size: 1.1em;
 }
+
+  /* Flash Messages */
+  .App-message { 
+    display: block;
+    position: absolute;
+    background-color: var(--cyan); 
+    color: black;
+    padding-top: 5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    z-index: 100 !important;
+    width: 100vw;
+    text-align: center;
+  }
 
 /* Home */
 .carousel {

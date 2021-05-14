@@ -7,29 +7,29 @@ import greenLeaf from '../photos/green-leaf.png';
 
 const PhotoCarousel = () => {
     return (
-        <Carousel class="carousel" fade>
-          <Carousel.Item class="carousel-item" interval={1500}>
+        <Carousel className="carousel" fade>
+          <Carousel.Item className="carousel-item" interval={1500}>
             <img
               className="d-block w-100 main-image"
               src={logo}
               alt="Beyond Nature CO logo"
             />
           </Carousel.Item>
-          <Carousel.Item class="carousel-item" interval={3000}>
+          <Carousel.Item className="carousel-item" interval={3000}>
             <img 
               className="d-block w-100 main-image"
               src={hangingPorcelainFeeders}
               alt="Three porcelain bird feeders hang from a fence"
             />
           </Carousel.Item>
-          <Carousel.Item class="carousel-item" interval={3000}>
+          <Carousel.Item className="carousel-item" interval={3000}>
             <img 
               className="d-block w-100 main-image"
               src={greenLeaf}
               alt="A porcelain leaf-shaped birdbath sits in a black basin"
             />
           </Carousel.Item>
-          <Carousel.Item class="carousel-item" interval={3000}>
+          <Carousel.Item className="carousel-item" interval={3000}>
             <img
               className="d-block w-100 main-image"
               src={greenBirdbath}

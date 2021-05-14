@@ -1,5 +1,7 @@
 /* Overall styling */
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
 :root {
   --grey: #343a40;
@@ -73,8 +75,8 @@
 }
 
 .about {
-  font-family: 'Parisienne', cursive;
-  font-size: 5em;
+  font-family: 'Zeyada', cursive;
+  font-size: 6em;
   color: var(--cyan);
 }
 
@@ -114,8 +116,8 @@
 }
 
 #contact-header {
-  font-family: 'Parisienne', cursive;
-  font-size: 4em;
+  font-family: 'Zeyada', cursive;
+  font-size: 6em;
   color: var(--cyan);
 }
 
@@ -138,8 +140,8 @@
 }
 
 .highlights-title {
-  font-family: 'Parisienne', cursive;
-  font-size: 4em;
+  font-family: 'Zeyada', cursive;
+  font-size: 5em;
   color: var(--cyan);
 }
 

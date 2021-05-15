@@ -23,13 +23,17 @@ const Header = (props) => {
         <FontAwesomeIcon icon={faBars} className="navbar-toggle" />
       </Navbar.Toggle>
       {user.isAuthenticated
-            ? <button className="login-link link-like ml-0 pl-0     pt-2 pb-2" onClick={handleLogout}>
+            ? <button className="nav-link link-like ml-0 mr-0 pl-0 pt-2 pb-2" onClick={handleLogout}>
             Logout
             </button>
-            : <Nav.Link href="/login" className="login-link">
+            : <Nav.Link href="/login" className="nav-link">
               Login
             </Nav.Link>
           }
+      {user.isAuthenticated &&
+        <Nav.Link href="/inventory-form" className="nav-link pl-0 mr-0">
+          Upload Inventory
+        </Nav.Link>}
       <Navbar.Collapse>
         <Nav className="mr-auto">
           <Nav.Link href="/" className="navlink-custom">

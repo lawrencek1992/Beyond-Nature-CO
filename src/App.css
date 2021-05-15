@@ -283,6 +283,7 @@
 /* Inventory Form */
 .inventory-form-container {
   height: 100vh;
+  overflow: scroll;
 }
 
 .inventory-form {

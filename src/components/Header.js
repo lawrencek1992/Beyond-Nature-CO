@@ -1,4 +1,5 @@
 import React, { useContext } from "react"; 
+import {BrowserRouter as Redirect} from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from 'react-bootstrap';
 import UserContext from "../context/UserContext";
@@ -10,7 +11,10 @@ const Header = (props) => {
 
   const handleLogout = (event) => {
     event.preventDefault();
-    console.log("You're logged out!");
+    onLogout();
+    return (
+      <Redirect to="/" />
+    );
   }
 
   return (
@@ -19,10 +23,7 @@ const Header = (props) => {
         <FontAwesomeIcon icon={faBars} className="navbar-toggle" />
       </Navbar.Toggle>
       {user.isAuthenticated
-            ? <button className="login-link link-like ml-0 pl-0     pt-2 pb-2" onClick={(event) => {
-              event.preventDefault();
-              onLogout();
-            }}>
+            ? <button className="login-link link-like ml-0 pl-0     pt-2 pb-2" onClick={handleLogout}>
             Logout
             </button>
             : <Nav.Link href="/login" className="login-link">

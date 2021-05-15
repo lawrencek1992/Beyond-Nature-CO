@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// Still using this?
-// import InfiniteScroll from 'react-infinite-scroll-component';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import firebase from "../firebase";

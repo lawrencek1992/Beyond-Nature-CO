@@ -17,6 +17,7 @@ import Contact from './components/Contact.js';
 import Highlights from './components/Highlights.js';
 import Login from './components/Login.js';
 import Message from './components/Message.js';
+import InventoryForm from './components/InventoryForm.js';
 
 const App = (props) => {
   const [user, setUser] = useStorageState(localStorage, `state-user`, {});
@@ -51,9 +52,6 @@ const App = (props) => {
       })
       .catch((error) => console.error(error));
     setFlashMessage(`logout`);
-    return (
-      <Redirect to="/" />
-    )
   };
 
   return (
@@ -82,7 +80,18 @@ const App = (props) => {
                   exact
                   path="/login"
                   render={() => 
-                    !user.isAuthenticated ? <Login /> : <Redirect to="/" />
+                    !user.isAuthenticated 
+                      ? <Login /> 
+                      : <Redirect to="/inventory-form" />
+                  }
+              />
+              <Route 
+                exact
+                path="/inventory-form"
+                render={() => 
+                user.isAuthenticated
+                  ? <InventoryForm />
+                  : <Login />
                   }
               />
             </Switch>

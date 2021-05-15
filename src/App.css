@@ -280,4 +280,9 @@
   width: 35vw;
 }
 
+/* Inventory Form */
+.inventory-form-container {
+  height: 100vh;
+}
+
 /* Media queries for responsive design */

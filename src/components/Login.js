@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Redirect } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 import UserContext from '../context/UserContext';
@@ -12,10 +13,9 @@ const Login = (props) => {
     const handleLogin = (event) => {
         event.preventDefault();
         onLogin(email, password);
-        console.log("You're logged in!");
         return (
-            <Redirect to="/"/>
-        )
+            <Redirect to="/inventory-form" />
+        );
     };
 
     return (

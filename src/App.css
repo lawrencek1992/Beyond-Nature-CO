@@ -35,11 +35,11 @@
   font-size: 1.1em;
 }
 
-.login-link {
+.nav-link {
   color: var(--white);
 }
 
-.login-link:hover {
+.nav-link:hover {
   color: var(--cyan);
 }
 
@@ -55,6 +55,12 @@
 }
 
 .link-like:hover {
+  color: var(--cyan);
+}
+
+.title {
+  font-family: 'Zeyada', cursive;
+  font-size: 5.5em;
   color: var(--cyan);
 }
 
@@ -159,12 +165,6 @@
   width: 100vw;
   color: var(--white);
   background-color: var(--tan);
-}
-
-.highlights-title {
-  font-family: 'Zeyada', cursive;
-  font-size: 5em;
-  color: var(--cyan);
 }
 
 .highlights-link {
@@ -283,6 +283,26 @@
 /* Inventory Form */
 .inventory-form-container {
   height: 100vh;
+}
+
+.inventory-form {
+  border: solid 1px var(--cyan);
+}
+
+.form-label {
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+.upload-button {
+  background-color: var(--cyan) !important;
+  border: none !important;
+  color: black !important;
+}
+
+.upload-button:hover {
+  background-color: cyan !important;
+  border: solid 1px black !important;
 }
 
 /* Media queries for responsive design */

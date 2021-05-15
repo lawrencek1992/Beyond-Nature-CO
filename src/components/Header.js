@@ -32,7 +32,7 @@ const Header = (props) => {
           }
       {user.isAuthenticated &&
         <Nav.Link href="/inventory-form" className="nav-link pl-0 mr-0">
-          Upload Inventory
+          Add Inventory
         </Nav.Link>}
       <Navbar.Collapse>
         <Nav className="mr-auto">

@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 const InventoryForm = () => {
     return (
         <Container className="inventory-form-container pt-5 mt-5" fluid>
-            <h1 className="text-center title mb-4 mt-4">Add Inventory</h1>
+            <h1 className="text-center title mb-4 mt-3">Add Inventory</h1>
             <Form className="inventory-form p-4">
                 <Form.Group controlId="photoUpload">
                     <Form.File id="image" label="Image upload" className="form-label" />

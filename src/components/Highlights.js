@@ -65,15 +65,15 @@ function Highlights() {
     })
 
     return (
-        <Container className="mt-5 pt-4 highlights-container" fluid>
-            <h1 className="text-center pb-3 title">
+        <Container className="mt-5 pt-4 pl-0 pr-0 highlights-container" fluid>
+            <h1 className="text-center mt-0 mb-3  pt-3 pb-1 highlights-title">
                 Highlights
             </h1>
-            <Container className="row" fluid>
+            <Container className="row text-center ml-1" fluid>
             {
                 photos && photos.map(photo => {
                     return (
-                        <Image className="col-3 mb-4" key={photo.index} src={photo.url} alt={photo.alt} fluid />
+                        <Image className="col-3 mb-4 rounded" key={photo.index} src={photo.url} alt={photo.alt} fluid />
                     )
                 })
             }

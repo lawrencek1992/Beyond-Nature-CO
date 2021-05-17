@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <Container className="home-container pb-5 text-center" fluid >
             <PhotoCarousel />
-            <Container className="about-container">
+            <Container className="about-container pt-1 pb-5 mt-5">
                 <h1 className="title mt-5 mb-0">About</h1>
                     <Container className="home-description mt-0 pt-0 col-s-7 text-center">
                         <p>

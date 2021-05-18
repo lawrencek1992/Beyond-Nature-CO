@@ -8,6 +8,9 @@ for help writing functions to pull photos from firestore
 *https://stackoverflow.com/questions/54508693/detect-bottom-of-page-to-fetch-more-data-in-react
 for the function fetchMorePosts() that detects when a user scrolls to the bottom of the page
 
+*https://benmcmahen.com/uploading-images-with-firebase-and-react/
+tutorial using filepond to upload images to firebase storage
+
 
 
 

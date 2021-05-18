@@ -1,10 +1,20 @@
 import React from 'react';
+import firebase from '../firebase.js';
+
+import shortid from 'shortid';
+import { FilePond, registerPlugin } from 'react-filepond';
+import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation';
+import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+import "filepond/dist/filepond.min.css"
+import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const InventoryForm = () => {
-    
+    registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
+    const storage = firebase.storage().ref();
 
     return (
         <Container className="inventory-form-container pt-5 mt-5" fluid>

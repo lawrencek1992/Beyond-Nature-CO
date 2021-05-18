@@ -3,26 +3,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
+/* Save color scheme hex codes as variables for easy editing */
 :root {
-  /* Option #1 */
-  /* blues and gold */
   --sky: #cae4db;
   --mist: #7a9d96;
   --cerulean: #00303f;
   --honey: #dcae1d;
   --white: #fff;
   --black: #000;
-}
-
-:root {
-  /* Option 3 */
-  /* nude colors */
-  --grey: #343a40;
-  --medium-grey: #959595;
-  --light-grey: #e8e8e8;
-  --light-blue: #c5cbe3;
-  --cream: #efe2ba;
-  --dark-blush: #9c8781;
 }
 
 /* Main styles */

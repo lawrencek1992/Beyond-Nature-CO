@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^4.6.0",
     "create-use-context": "^1.0.1",
+    "debug": "^4.3.1",
     "filepond": "^4.27.1",
     "filepond-plugin-image-exif-orientation": "^1.0.11",
     "filepond-plugin-image-preview": "^4.6.6",
@@ -30,7 +31,8 @@
     "shortid": "^2.2.16",
     "use-context": "^0.0.1",
     "use-storage-state": "^1.0.1",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "xmlhttprequest": "^1.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

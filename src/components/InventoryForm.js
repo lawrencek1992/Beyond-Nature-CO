@@ -1,4 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -22,7 +25,8 @@ const InventoryForm = () => {
                     <Form.File id="image" label="Image upload" className="form-label" />
                 </Form.Group>
                 <Form.Group clas>
-                    <Button className="btn upload-button mb-0 mt-2" type="submit">Upload</Button>
+                    <Button className="btn upload-button mb-0 mt-2 mr-3" type="submit">Upload</Button>
+                    <Link className="btn btn-secondary mb-0 mt-2" type="cancel" to="/">Cancel</Link>
                 </Form.Group>
             </Form>
         </Container>

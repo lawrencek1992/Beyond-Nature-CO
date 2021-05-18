@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import firebase from '../firebase.js';
 
 import shortid from 'shortid';
@@ -7,6 +8,10 @@ import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond/dist/filepond.min.css"
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+=======
+import { BrowserRouter as Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+>>>>>>> ee69be1a6b037faa95bc97acc9e7b12d843b9a2b
 
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -32,7 +37,8 @@ const InventoryForm = () => {
                     <Form.File id="image" label="Image upload" className="form-label" />
                 </Form.Group>
                 <Form.Group clas>
-                    <Button className="btn upload-button mb-0 mt-2" type="submit">Upload</Button>
+                    <Button className="btn upload-button mb-0 mt-2 mr-3" type="submit">Upload</Button>
+                    <Link className="btn btn-secondary mb-0 mt-2" type="cancel" to="/">Cancel</Link>
                 </Form.Group>
             </Form>
         </Container>

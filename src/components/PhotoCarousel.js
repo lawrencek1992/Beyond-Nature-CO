@@ -1,9 +1,10 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import hangingPorcelainFeeders from '../photos/hanging-porcelain-feeders.png';
 import logo from '../photos/Logo.png';
-import greenBirdbath from '../photos/green-birdbath.png';
-import greenLeaf from '../photos/green-leaf.png';
+
+import flowerAndLeafBirdbath from '../photos/flower-and-leaf-birdbath.png';
+import blueFlowerBirdbath from '../photos/blue-flower-birdbath.png';
+import owlBirdbath from '../photos/owl-birdbath.png';
 
 const PhotoCarousel = () => {
     return (
@@ -18,21 +19,21 @@ const PhotoCarousel = () => {
           <Carousel.Item className="carousel-item" interval={3000}>
             <img 
               className="d-block w-100 main-image"
-              src={hangingPorcelainFeeders}
+              src={flowerAndLeafBirdbath}
               alt="Three porcelain bird feeders hang from a fence"
             />
           </Carousel.Item>
           <Carousel.Item className="carousel-item" interval={3000}>
             <img 
               className="d-block w-100 main-image"
-              src={greenLeaf}
+              src={blueFlowerBirdbath}
               alt="A porcelain leaf-shaped birdbath sits in a black basin"
             />
           </Carousel.Item>
           <Carousel.Item className="carousel-item" interval={3000}>
             <img
               className="d-block w-100 main-image"
-              src={greenBirdbath}
+              src={owlBirdbath}
               alt="A birdbath made of green porcelain leaves"
             />
           </Carousel.Item>

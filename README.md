@@ -1,15 +1,16 @@
 Sources: 
-*https://loading.io/css/ 
-for the loading icon
-
 *https://dev.to/hadi/infinite-scroll-in-firebase-firestore-and-react-js-55g3 
 for help writing functions to pull photos from firestore
+    -also modelled the getInventoryItems function in InventoryList.js off this
 
 *https://stackoverflow.com/questions/54508693/detect-bottom-of-page-to-fetch-more-data-in-react
 for the function fetchMorePosts() that detects when a user scrolls to the bottom of the page
 
 *https://benmcmahen.com/uploading-images-with-firebase-and-react/
 tutorial using filepond to upload images to firebase storage
+
+*Filepond
+plugin to easily drag and drop/select photos to upload
 
 
 

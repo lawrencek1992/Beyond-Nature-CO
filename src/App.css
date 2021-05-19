@@ -246,7 +246,14 @@
 .inventory-card {
   background-color: var(--mist);
   opacity: 0.9;
+}
+
+.price {
   color: var(--white);
+}
+
+.description {
+  color: var(--cerulean);
 }
 
 /* Media queries for responsive design */

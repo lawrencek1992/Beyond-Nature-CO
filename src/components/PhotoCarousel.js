@@ -1,10 +1,9 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import logo from '../photos/Logo.png';
-
-import flowerAndLeafBirdbath from '../photos/flower-and-leaf-birdbath.png';
-import blueFlowerBirdbath from '../photos/blue-flower-birdbath.png';
-import owlBirdbath from '../photos/owl-birdbath.png';
+import logo from '../photos/carousel-photos/Logo.png';
+import flowerAndLeafBirdbath from '../photos/carousel-photos/flower-and-leaf-birdbath.png';
+import blueFlowerBirdbath from '../photos/carousel-photos/blue-flower-birdbath.png';
+import birdOnLeaf from '../photos/carousel-photos/bird-on-leaf.png';
 
 const PhotoCarousel = () => {
     return (
@@ -33,7 +32,7 @@ const PhotoCarousel = () => {
           <Carousel.Item className="carousel-item" interval={2500}>
             <img
               className="d-block w-100 main-image"
-              src={owlBirdbath}
+              src={birdOnLeaf}
               alt="A birdbath made of green porcelain leaves"
             />
           </Carousel.Item>

@@ -246,6 +246,12 @@
 .inventory-card {
   background-color: var(--mist);
   opacity: 0.9;
+  /* width: 30vw; */
+}
+
+.card-image {
+  width: 100% !important;
+  min-width: 100% !important;
 }
 
 .price {

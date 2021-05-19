@@ -15,6 +15,8 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 const storage = firebase.storage().ref();
 
+const firestore = firebase.firestore();
+
 const log = debug("app:image");
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
@@ -25,6 +27,7 @@ const ImageUpload = ({
     defaultFiles = [],
 }) => {
     const [files, setFiles] = useState(defaultFiles);
+    const [imgURL, setImgURL] = useState('');
     const ref = React.useRef(null);
 
     return (
@@ -44,10 +47,16 @@ const ImageUpload = ({
                     progress,
                     _abort
                 ) => {
+                    // id becomes the name of the file in storage
+                    // This is also stored in the "image" state in the InventoryForm.js component.
                     const id = shortid.generate();
-                    const task = storage.child("inventory-photos/" + id).put(file, {
-                        contentType: "image/jpeg"
-                    });
+
+                    const photoRef = storage.child("inventory-photos/" + id);
+
+                    // The put method is going to upload the file and contentType to firebase storage. 
+                    const task = photoRef.put(file, {
+                            contentType: "image/jpeg"
+                        });
 
                     task.on(
                         firebase.storage.TaskEvent.STATE_CHANGED,
@@ -63,12 +72,22 @@ const ImageUpload = ({
                             log("DONE");
                             load(id);
                             onRequestSave(id);
+                            // Add the download url to a firestore doc with the same id (name) as the photo saved in storage
+                            photoRef
+                                .getDownloadURL()
+                                .then(url => {
+                                    firestore
+                                        .collection("inventory-items")
+                                        .doc(id)
+                                        .set({
+                                            imgURL: url
+                                        });
+                                });
                         }
                     );
                 },
                 load: (source, load, error, progress, abort) => {
                     progress(true, 0, 1024);
-
                     storage
                         .child("inventory-photos/" + source)
                         .getDownloadURL()
@@ -92,6 +111,14 @@ const ImageUpload = ({
             onupdatefiles={fileItems => {
                 if (fileItems.length === 0) {
                     onRequestClear();
+
+
+
+
+
+
+
+                    // Also gotta delete data from firebase storage and firestore??? Or do you need to find out how to add a function for that to the little "x" button in the GUI? 
                 }
                 setFiles(fileItems.map(fileItem => fileItem.file));
             }}

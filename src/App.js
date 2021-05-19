@@ -18,6 +18,7 @@ import Highlights from './components/Highlights.js';
 import Login from './components/Login.js';
 import Message from './components/Message.js';
 import InventoryForm from './components/InventoryForm.js';
+import InventoryList from './components/InventoryList.js';
 
 const App = (props) => {
   const [user, setUser] = useStorageState(localStorage, `state-user`, {});
@@ -93,6 +94,13 @@ const App = (props) => {
                   ? <InventoryForm />
                   : <Login />
                   }
+              />
+              <Route 
+                exact
+                path="/inventory"
+                render={() =>
+                  <InventoryList />
+                }
               />
             </Switch>
         </div>

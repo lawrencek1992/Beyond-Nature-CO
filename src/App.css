@@ -317,4 +317,12 @@
   color: var(--cerulean) !important;
 }
 
+/* Inventory List */
+
+/* wtf why is this not working???? */
+.inventory-list-container{
+  height: 100vh;
+  overflow: scroll;
+}
+
 /* Media queries for responsive design */

@@ -4,11 +4,11 @@ import Container from 'react-bootstrap/Container';
 
 const InventoryList = () => {
     return (
-        <Container>
-            <h1 className="title">
+        <Container classname="mt-5 pt-5 inventory-list-container">
+            <h1 className="title text-center pt-5 mt-5">
                 Current Inventory
             </h1>
-            <p>
+            <p className="text-center">
                 This is where you can put your current inventory items!
             </p>
         </Container>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import firebase from '../firebase.js';
 
@@ -15,15 +15,49 @@ const InventoryForm = () => {
     const [price, setPrice] = useState(0);
 
     const firestore = firebase.firestore();
+    const storage = firebase.storage().ref().child("inventory-photos");
+    const history = useHistory();
 
     const  handleSubmit = () => {
-        let docRef = firestore.collection("inventory-items").doc(image);
-        docRef.set({
+        let firestoreDocRef = firestore.collection("inventory-items").doc(image);
+        // Add the description and price values to the firestore doc and merge them with the existing data (the url of the photo). 
+        firestoreDocRef.set({
             description: description,
             price: price
         },  { merge: true });
-
     };
+
+    const handleCancel = (event) => {
+        console.log("The current image is: ", image);
+        event.preventDefault();
+
+        // Remove photo document from firestore
+        let docRef = firestore.collection("inventory-items").doc(image);
+        docRef
+            .delete()
+            .then((res) => {
+                console.log(image, " is now ", res, " in firestore.");
+                return null;
+              })
+              .catch((e) => {
+                console.error("Error: ", e);
+                return e;
+              });
+
+        // Remove photo file from cloud storage
+        let storageFileRef = storage.child(image);
+        storageFileRef
+            .delete()
+            .then((res) => {
+                console.log(image, " is now ", res, " in cloud storage.");
+            })
+            .catch((e) => {
+                console.error("Error: ", e);
+            });
+        
+        // Redirect to the home page
+        history.push("/");
+    }
 
     return (
         <Container className="inventory-form-container pt-5 mt-5" fluid>
@@ -59,9 +93,7 @@ const InventoryForm = () => {
                 </Form.Group>
                 <Form.Group controlId="formButtons">
                     <Button className="btn upload-button mb-0 mt-2 mr-3" type="submit">Save</Button>
-
-                    {/* You need to add a function to delete the photo and the document about the photo in storage and firestore, otherwise they will just stay there and take up space (which is limited) */}
-                    <Link className="btn btn-secondary mb-0 mt-2" type="cancel" to="/">Cancel</Link>
+                    <Button className="btn btn-secondary mb-0 mt-2" type="cancel" to="/" onClick={handleCancel}>Cancel</Button>
                 </Form.Group>
             </Form>
         </Container>

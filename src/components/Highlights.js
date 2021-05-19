@@ -4,14 +4,14 @@ import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import firebase from "../firebase";
 
-const db = firebase.firestore();
+const firestore = firebase.firestore();
 
 function Highlights() {
     const [photos, setPhotos] = useState([]);
     const [lastPhoto, setLastPhoto] = useState([]);
     
     const photosFirstBatch = async () => {
-        const response = db
+        const response = firestore
             .collection("highlights-photos")
             .orderBy("index", "asc")
             .limit(8);
@@ -28,7 +28,7 @@ function Highlights() {
 
     const photosNextBatch = async (lastIndex) => {
         if (lastIndex <= 85) {
-            const response = db
+            const response = firestore
                 .collection("highlights-photos")
                 .orderBy("index", "asc")
                 .startAfter(lastIndex)

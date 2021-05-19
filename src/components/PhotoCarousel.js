@@ -16,21 +16,21 @@ const PhotoCarousel = () => {
               alt="Beyond Nature CO logo"
             />
           </Carousel.Item>
-          <Carousel.Item className="carousel-item" interval={3000}>
+          <Carousel.Item className="carousel-item" interval={2500}>
             <img 
               className="d-block w-100 main-image"
               src={flowerAndLeafBirdbath}
               alt="Three porcelain bird feeders hang from a fence"
             />
           </Carousel.Item>
-          <Carousel.Item className="carousel-item" interval={3000}>
+          <Carousel.Item className="carousel-item" interval={2500}>
             <img 
               className="d-block w-100 main-image"
               src={blueFlowerBirdbath}
               alt="A porcelain leaf-shaped birdbath sits in a black basin"
             />
           </Carousel.Item>
-          <Carousel.Item className="carousel-item" interval={3000}>
+          <Carousel.Item className="carousel-item" interval={2500}>
             <img
               className="d-block w-100 main-image"
               src={owlBirdbath}

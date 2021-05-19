@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import firebase from "../firebase";
+
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
-import firebase from "../firebase";
+import Spinner from 'react-bootstrap/Spinner';
 
 const firestore = firebase.firestore();
 
@@ -65,7 +67,7 @@ function Highlights() {
     })
 
     return (
-        <Container className="mt-5 pt-4 pl-0 pr-0 highlights-container" fluid>
+        <Container className="mt-5 pt-4 pl-0 pr-0 highlights-container text-center" fluid>
             <h1 className="text-center mt-0 mb-3  pt-3 pb-1 highlights-title">
                 Highlights
             </h1>
@@ -78,22 +80,8 @@ function Highlights() {
                 })
             }
             </Container>
-            {/* Loading icon */}
             {lastPhoto < 85
-            ? (<div className="lds-default">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>)
+            ? <Spinner animation="border" variant="info" className="text-center spinner"/>
             : (<div className="text-center pb-3 highlights-message">
                 <p>
                     Contact us <Link to="/contact" className="highlights-link">here</Link> to inquire about our current inventory! 

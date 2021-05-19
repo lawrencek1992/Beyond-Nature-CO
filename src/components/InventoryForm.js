@@ -23,7 +23,8 @@ const InventoryForm = () => {
         // Add the description and price values to the firestore doc and merge them with the existing data (the url of the photo). 
         firestoreDocRef.set({
             description: description,
-            price: price
+            price: price,
+            dateAdded: Date.now(),
         },  { merge: true });
     };
 

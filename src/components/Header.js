@@ -30,10 +30,6 @@ const Header = (props) => {
               Login
             </Nav.Link>
           }
-      {user.isAuthenticated &&
-        <Nav.Link href="/inventory-form" className="nav-link pl-0 mr-0">
-          Add Inventory
-        </Nav.Link>}
       <Navbar.Collapse>
         <Nav className="mr-auto">
           <Nav.Link href="/" className="navlink-custom">
@@ -42,6 +38,10 @@ const Header = (props) => {
           <Nav.Link href="/inventory" className="navlink-custom">
             Inventory
           </Nav.Link>
+          {user.isAuthenticated &&
+        <Nav.Link href="/inventory-form" className="navlink-custom pl-0 mr-0">
+          Add Inventory
+        </Nav.Link>}
           <Nav.Link href="/highlights" className="navlink-custom">
             Highlights
           </Nav.Link>

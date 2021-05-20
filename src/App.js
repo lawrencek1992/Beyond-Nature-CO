@@ -90,7 +90,7 @@ const App = (props) => {
                 exact
                 path="/inventory-form"
                 render={() => 
-                user.isAuthenticated
+                UserContext.isAuthenticated
                   ? <InventoryForm
                       setFlashMessage={setFlashMessage}
                       message={message}
@@ -105,6 +105,7 @@ const App = (props) => {
                   <InventoryList 
                     setFlashMessage={setFlashMessage}
                     message={message}
+                    user={user}
                   />
                 }
               />

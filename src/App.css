@@ -17,7 +17,6 @@
 .App {
   background: var(--sky);
   color: var(--cerulean);
-  overflow-x: hidden;
 }
 
 .navbar-custom {
@@ -248,6 +247,7 @@
 .inventory-card {
   background-color: var(--mist);
   opacity: 0.9;
+  min-height: 29em;
 }
 
 .card-img {

@@ -57,7 +57,7 @@ const Highlights = () => {
 
     useEffect(() => {
         photosFirstBatch();
-    });
+    }, []);
 
     useEffect(() => {
         window.addEventListener("scroll", fetchMorePhotos);
@@ -72,9 +72,10 @@ const Highlights = () => {
                 Highlights
             </h1>
             <Container className="row text-center ml-1" fluid>
-            {photos && photos.map(photo => {
+            {
+                photos && photos.map(photo => {
                     return (
-                        <Image className="col-md-3 col-sm-4 col-6 mb-4 rounded" key={photo.index} src={photo.url} alt={photo.alt} fluid />
+                        <Image className="col-md-3 col-sm-4 col-6 mb-3 rounded" key={photo.index} src={photo.url} alt={photo.alt} fluid />
                     )
                 })
             }

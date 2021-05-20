@@ -6,6 +6,7 @@ const Message = ({ type }) => {
         logout: "You have been logged out!",
         deleted: "Your inventory item has been deleted!",
         saved: "New item added to inventory!",
+        login: "You have been logged in!",
     };
     return (
         <div className={`App-message ${type}`}>

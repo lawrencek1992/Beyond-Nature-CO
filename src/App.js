@@ -82,7 +82,10 @@ const App = (props) => {
                   path="/login"
                   render={() => 
                     !UserContext.isAuthenticated 
-                      ? <Login /> 
+                      ? <Login
+                          setFlashMessage={setFlashMessage}
+                          message={message} 
+                        /> 
                       : <Redirect to="/inventory-form" />
                   }
               />

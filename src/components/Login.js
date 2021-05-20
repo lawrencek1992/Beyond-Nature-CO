@@ -1,21 +1,22 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { BrowserRouter as Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 import UserContext from '../context/UserContext';
 
-const Login = (props) => {
+const Login = ({message, setFlashMessage }) => {
     const { onLogin } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const history = useHistory();
+
     const handleLogin = (event) => {
         event.preventDefault();
         onLogin(email, password);
-        return (
-            <Redirect to="/inventory-form" />
-        );
+        setFlashMessage(`login`);
+        history.push("/");
     };
 
     return (

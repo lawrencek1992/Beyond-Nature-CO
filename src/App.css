@@ -90,6 +90,10 @@
     padding-top: 3em;
   }
 
+  .App-message.login {
+    padding-top: 5em;
+  }
+
 /* Home */
 .carousel {
   margin-top: 45px;

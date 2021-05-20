@@ -66,7 +66,7 @@ const InventoryForm = () => {
     }
 
     const handleInputChange = () => {
-        if (description.length > 44) {
+        if (description.length > 42) {
             setShowTooltip(true);
             setTimeout(() => {setShowTooltip(false)}, 3000);
         } else if (description.length <= 44) {
@@ -108,7 +108,7 @@ const InventoryForm = () => {
                         type="textarea" 
                         id="description"
                         placeholder="Item description"
-                        maxLength="45"
+                        maxLength="43"
                         ref={target}
                         onChange={(event) => {
                             setDescription(event.target.value);

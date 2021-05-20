@@ -28,7 +28,7 @@ const App = (props) => {
     setMessage(message);
     setTimeout(() => {
       setMessage(null);
-    }, 1600);
+    }, 1750);
   }
 
   const onLogin = (email, password) => {

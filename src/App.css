@@ -82,6 +82,10 @@
     padding-top: 6em;
   }
 
+  .App-message.saved {
+    padding-top: 3em;
+  }
+
 /* Home */
 .carousel {
   margin-top: 45px;

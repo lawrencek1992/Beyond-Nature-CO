@@ -10,7 +10,7 @@ import Overlay from 'react-bootstrap/Overlay';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ImageUpload from './ImageUpload.js'
 
-const InventoryForm = () => {
+const InventoryForm = ({ message, setFlashMessage }) => {
     let defaultImage;
     const [image, setImage] = useState(defaultImage);
     const [description, setDescription] = useState('');
@@ -29,14 +29,15 @@ const InventoryForm = () => {
         firestoreDocRef.set({
             description: description,
             price: price,
+            name: image,
             dateAdded: Date.now(),
         },  { merge: true });
+        setFlashMessage(`saved`);
     };
 
     const handleCancel = (event) => {
         console.log("The current image is: ", image);
         event.preventDefault();
-
         // Remove photo document from firestore
         let docRef = firestore.collection("inventory-items").doc(image);
         docRef
@@ -49,7 +50,6 @@ const InventoryForm = () => {
                 console.error("Error: ", e);
                 return e;
               });
-
         // Remove photo file from cloud storage
         let storageFileRef = storage.child(image);
         storageFileRef
@@ -60,10 +60,9 @@ const InventoryForm = () => {
             .catch((e) => {
                 console.error("Error: ", e);
             });
-        
         // Redirect to the home page
         history.push("/");
-    }
+    };
 
     const handleInputChange = () => {
         if (description.length > 42) {

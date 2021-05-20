@@ -36,7 +36,10 @@ const Header = (props) => {
             Home
           </Nav.Link>
           <Nav.Link href="/inventory" className="navlink-custom">
-            Inventory
+            {user.isAuthenticated
+              ? "Manage Inventory"
+              : "Inventory"
+              }
           </Nav.Link>
           {user.isAuthenticated &&
         <Nav.Link href="/inventory-form" className="navlink-custom pl-0 mr-0">

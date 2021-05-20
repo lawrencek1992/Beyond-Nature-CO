@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import firebase from '../firebase.js';
+import UserContext from '../context/UserContext';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const InventoryList = ({ message, setFlashMessage }) => {
+const InventoryList = ({ user, message, setFlashMessage }) => {
     const [inventoryItems, setInventoryItems] = useState([]);
     // const [lastItem, setLastItem] = useState([]);
 
@@ -85,7 +85,6 @@ const InventoryList = ({ message, setFlashMessage }) => {
                                 alt={item.description} 
                                 key={item.dateAdded}
                                 className="card-img"
-                                // fluid
                             />
                             <Card.Body className="card-body text-center">
                                 <Card.Title className="description">
@@ -94,18 +93,15 @@ const InventoryList = ({ message, setFlashMessage }) => {
                                 <Card.Text className="price pb-2 mb-0">
                                     ${item.price}
                                 </Card.Text>
-                                {/* <button 
-                                    className="inventory-icon text-center pt-2 mr-1"
-                                    // onClick={someEditFunction}
-                                >
-                                    <FontAwesomeIcon icon={faPencilAlt} />
-                                </button> */}
-                                <button 
+                                {user.isAuthenticated &&
+                                (
+                                    <button 
                                     className="inventory-icon text-center ml-1"
                                     onClick={() => handleDelete(item.name)}
-                                >
-                                    <FontAwesomeIcon icon={faTrash} />
-                                </button>
+                                    >
+                                        <FontAwesomeIcon icon={faTrash} />
+                                    </button>
+                                )}
                             </Card.Body>
                             </Card>
                         </Container>

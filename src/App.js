@@ -81,7 +81,7 @@ const App = (props) => {
                   exact
                   path="/login"
                   render={() => 
-                    !user.isAuthenticated 
+                    !UserContext.isAuthenticated 
                       ? <Login /> 
                       : <Redirect to="/inventory-form" />
                   }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 
 import firebase from '../firebase.js';
-import UserContext from '../context/UserContext';
+import UserContext from '../context/UserContext.js'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,10 +10,11 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const InventoryList = ({ user, message, setFlashMessage }) => {
+const InventoryList = ({ message, setFlashMessage }) => {
     const [inventoryItems, setInventoryItems] = useState([]);
     // const [lastItem, setLastItem] = useState([]);
 
+    const { user } = useContext(UserContext);
     const firestore = firebase.firestore();
     const storage = firebase.storage().ref();
 

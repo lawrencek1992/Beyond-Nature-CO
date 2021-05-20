@@ -78,6 +78,10 @@
     font-weight: bold;
   }
 
+  .App-message.deleted {
+    padding-top: 6em;
+  }
+
 /* Home */
 .carousel {
   margin-top: 45px;
@@ -247,12 +251,16 @@
 .inventory-card {
   background-color: var(--mist);
   opacity: 0.9;
-  min-height: 29em;
+  min-width: 11em;
 }
 
 .card-img {
   height: 50vh !important;
   width: auto;
+}
+
+.card-body {
+  height: 10em;
 }
 
 .price {
@@ -261,6 +269,19 @@
 
 .description {
   color: var(--cerulean);
+  font-size: 1em;
+}
+
+.inventory-icon {
+  border: none;
+  text-align: left;
+  background-color: var(--mist);
+  color: var(--sky);
+}
+
+.inventory-icon:hover {
+  color: var(--honey);
+  font-size: 1.1em;
 }
 
 /* Media queries for responsive design */

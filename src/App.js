@@ -91,7 +91,10 @@ const App = (props) => {
                 path="/inventory-form"
                 render={() => 
                 user.isAuthenticated
-                  ? <InventoryForm />
+                  ? <InventoryForm
+                      setFlashMessage={setFlashMessage}
+                      message={message}
+                   />
                   : <Login />
                   }
               />
@@ -99,7 +102,10 @@ const App = (props) => {
                 exact
                 path="/inventory"
                 render={() =>
-                  <InventoryList />
+                  <InventoryList 
+                    setFlashMessage={setFlashMessage}
+                    message={message}
+                  />
                 }
               />
             </Switch>

@@ -7,10 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+// import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
-
 
 const InventoryList = ({ message, setFlashMessage }) => {
     const [inventoryItems, setInventoryItems] = useState([]);
@@ -96,12 +94,12 @@ const InventoryList = ({ message, setFlashMessage }) => {
                                 <Card.Text className="price pb-2 mb-0">
                                     ${item.price}
                                 </Card.Text>
-                                <button 
+                                {/* <button 
                                     className="inventory-icon text-center pt-2 mr-1"
                                     // onClick={someEditFunction}
                                 >
                                     <FontAwesomeIcon icon={faPencilAlt} />
-                                </button>
+                                </button> */}
                                 <button 
                                     className="inventory-icon text-center ml-1"
                                     onClick={() => handleDelete(item.name)}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import firebase from '../firebase.js';
@@ -6,6 +6,8 @@ import firebase from '../firebase.js';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Overlay from 'react-bootstrap/Overlay';
+import Tooltip from 'react-bootstrap/Tooltip';
 import ImageUpload from './ImageUpload.js'
 
 const InventoryForm = () => {
@@ -13,6 +15,9 @@ const InventoryForm = () => {
     const [image, setImage] = useState(defaultImage);
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
+    const [showTooltip, setShowTooltip] = useState(false);
+
+    const target = useRef(null);
 
     const firestore = firebase.firestore();
     const storage = firebase.storage().ref().child("inventory-photos");
@@ -60,18 +65,23 @@ const InventoryForm = () => {
         history.push("/");
     }
 
+    const handleInputChange = () => {
+        if (description.length > 44) {
+            setShowTooltip(true);
+            setTimeout(() => {setShowTooltip(false)}, 3000);
+        } else if (description.length <= 44) {
+            setShowTooltip(false);
+        }
+    }
+
+    useEffect(()=> {
+        handleInputChange();
+    });
+
     return (
         <Container className="inventory-form-container pt-5 mt-5" fluid>
             <h1 className="text-center title mb-4 mt-3">Add Inventory</h1>
             <Form className="inventory-form p-4 mb-5" onSubmit={handleSubmit}>
-                <Form.Group controlId="description">
-                    <Form.Label className="form-label">Name</Form.Label>
-                    <Form.Control type="textarea" placeholder="Item description" onChange={(event) => setDescription(event.target.value)} />
-                </Form.Group>
-                <Form.Group controlId="price">
-                    <Form.Label className="form-label">Price</Form.Label>
-                    <Form.Control type="number" placeholder="ex: 199" onChange={(event) => setPrice(event.target.value)}/>
-                </Form.Group>
                 <Form.Group controlId="photoUpload">
                     <Form.Label className="image">Image</Form.Label>
                     <ImageUpload
@@ -92,9 +102,47 @@ const InventoryForm = () => {
 
                         />
                 </Form.Group>
+                <Form.Group>
+                    <Form.Label className="form-label">Name</Form.Label>
+                    <Form.Control 
+                        type="textarea" 
+                        id="description"
+                        placeholder="Item description"
+                        maxLength="45"
+                        ref={target}
+                        onChange={(event) => {
+                            setDescription(event.target.value);
+                            handleInputChange();
+                            }} />
+                    <Overlay
+                        target={target.current}
+                        show={showTooltip}
+                        placement="top"
+                    >
+                        <Tooltip>
+                            Maximum character length reached!
+                        </Tooltip>
+                    </Overlay>
+                </Form.Group>
+                <Form.Group controlId="price">
+                    <Form.Label className="form-label">Price</Form.Label>
+                    <Form.Control 
+                        type="number" 
+                        placeholder="ex: 199" 
+                        onChange={(event) => setPrice(event.target.value)}/>
+                </Form.Group>
                 <Form.Group controlId="formButtons">
-                    <Button className="btn upload-button mb-0 mt-2 mr-3" type="submit">Save</Button>
-                    <Button className="btn btn-secondary mb-0 mt-2" type="cancel" to="/" onClick={handleCancel}>Cancel</Button>
+                    <Button 
+                    className="btn upload-button mb-0 mt-2 mr-3" type="submit">
+                        Save
+                    </Button>
+                    <Button 
+                        className="btn btn-secondary mb-0 mt-2" 
+                        type="cancel" 
+                        to="/" 
+                        onClick={handleCancel}>
+                            Cancel
+                    </Button>
                 </Form.Group>
             </Form>
         </Container>

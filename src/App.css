@@ -17,6 +17,7 @@
 .App {
   background: var(--sky);
   color: var(--cerulean);
+  overflow-x: hidden;
 }
 
 .navbar-custom {
@@ -208,6 +209,7 @@
 /* Inventory Form */
 .inventory-form-container {
   height: 100vh;
+  width: 100vw;
   overflow: scroll;
 }
 

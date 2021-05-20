@@ -78,6 +78,10 @@
     font-weight: bold;
   }
 
+  .App-message.logout {
+    padding-top: 3em;
+  }
+
   .App-message.deleted {
     padding-top: 6em;
   }

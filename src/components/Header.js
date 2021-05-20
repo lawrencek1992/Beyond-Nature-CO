@@ -1,5 +1,6 @@
 import React, { useContext } from "react"; 
-import {BrowserRouter as Redirect} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from 'react-bootstrap';
 import UserContext from "../context/UserContext";
@@ -9,12 +10,12 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 const Header = (props) => {
   const { user, onLogout } = useContext(UserContext);
 
+  const history = useHistory();
+
   const handleLogout = (event) => {
     event.preventDefault();
     onLogout();
-    return (
-      <Redirect to="/" />
-    );
+    history.push("/");
   }
 
   return (

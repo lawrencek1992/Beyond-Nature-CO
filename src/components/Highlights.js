@@ -16,7 +16,7 @@ const Highlights = () => {
         const response = firestore
             .collection("highlights-photos")
             .orderBy("index", "asc")
-            .limit(8);
+            .limit(16);
         const data = await response.get();
         const photos = [];
         let lastPhoto = "";
@@ -75,7 +75,7 @@ const Highlights = () => {
             {
                 photos && photos.map(photo => {
                     return (
-                        <Image className="col-md-3 col-sm-4 col-6 mb-3 rounded" key={photo.index} src={photo.url} alt={photo.alt} fluid />
+                        <Image className="col-md-3 col-sm-4 col-6 mb-3 rounded highlights-photo" key={photo.index} src={photo.url} alt={photo.alt} fluid />
                     )
                 })
             }

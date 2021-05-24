@@ -10,7 +10,7 @@ const PhotoCarousel = () => {
         <Carousel className="carousel" fade>
           <Carousel.Item className="carousel-item" interval={1500}>
             <img
-              className="d-block w-100 main-image"
+              className="d-block main-image"
               src={logo}
               alt="Beyond Nature CO logo"
             />

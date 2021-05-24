@@ -4,7 +4,6 @@ import {
   Switch,
   Route,
   Redirect,
-  useHistory
 } from 'react-router-dom';
 import { useStorageState } from "react-storage-hooks";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,8 +23,6 @@ import InventoryList from './components/InventoryList.js';
 const App = (props) => {
   const [user, setUser] = useStorageState(localStorage, `state-user`, {});
   const [message, setMessage] = useState(null);
-
-  const history = useHistory();
 
   const setFlashMessage = (message) => {
     setMessage(message);

@@ -72,7 +72,7 @@ const InventoryList = ({ message, setFlashMessage }) => {
 
     return (
         <Container className="inventory-list-container text-center pl-4 pr-4" fluid>
-            <h1 className="title pt-5 mt-5 mb-3">
+            <h1 className="title pt-5 mt-5 mb-3" id="inventory-list-title">
                 Current Inventory
             </h1>
             <Row>

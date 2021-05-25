@@ -55,6 +55,22 @@ const Highlights = () => {
         };
     }
 
+    const endOfPage = (currentIndex) => {
+        if (lastPhoto < 85) {
+            return (
+                <Spinner animation="border" variant="info" className="spinner" />
+            )
+        } else {
+            return (
+                <div className="highlights-message">
+                        <p>
+                            Check out our current inventory <Link to="/inventory" className="highlights-link">here</Link>!
+                        </p>
+                    </div>
+            )
+        }
+    }
+
     useEffect(() => {
         photosFirstBatch();
     }, []);
@@ -67,28 +83,24 @@ const Highlights = () => {
     })
 
     return (
-        <Container className="mt-5 pt-4 pl-0 pr-0 highlights-container text-center" fluid>
-            <h1 className="text-center mt-0 mb-3  pt-3 pb-1 highlights-title">
+        <Container className="highlights-container text-center mt-5 pt-4 pl-0 pr-0" fluid>
+            <h1 className="highlights-title pt-3 pb-1 mb-3">
                 Highlights
             </h1>
-            <Container className="row text-center ml-1" fluid>
-            {
-                photos && photos.map(photo => {
-                    return (
-                        <Image className="col-md-3 col-sm-4 col-6 mb-3 rounded highlights-photo" key={photo.index} src={photo.url} alt={photo.alt} fluid />
-                    )
-                })
-            }
+            <Container className="row pr-0" fluid>
+                {
+                    photos && photos.map(photo => {
+                        return (
+                            <Image className="col-md-3 col-sm-4 col-6 mb-3 rounded highlights-photo" key={photo.index} src={photo.url} alt={photo.alt} fluid />
+                        )
+                    })
+                }
             </Container>
-            {lastPhoto < 85
-            ? <Spinner animation="border" variant="info" className="text-center spinner"/>
-            : (<div className="text-center pb-3 highlights-message">
-                <p>
-                    Contact us <Link to="/contact" className="highlights-link">here</Link> to inquire about our current inventory! 
-                </p>
-            </div>)
-            }
+            <Container className="end-of-page">
+                {endOfPage(lastPhoto)}
+            </Container>
         </Container>
+
     )
 }
 

@@ -7,7 +7,7 @@ import birdOnLeaf from '../photos/carousel-photos/bird-on-leaf.png';
 
 const PhotoCarousel = () => {
     return (
-        <Carousel className="carousel" fade>
+        <Carousel className="carousel m-0 p-0" fade>
           <Carousel.Item className="carousel-item" interval={1500}>
             <img
               className="d-block main-image"

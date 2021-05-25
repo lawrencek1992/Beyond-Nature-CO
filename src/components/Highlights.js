@@ -64,7 +64,7 @@ const Highlights = () => {
             return (
                 <div className="highlights-message">
                         <p>
-                            Check out our current inventory <Link to="/inventory" className="highlights-link">here</Link>!
+                            Check out our current inventory <Link to="/inventory" className="highlights-link">here!</Link>
                         </p>
                     </div>
             )

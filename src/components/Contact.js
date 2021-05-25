@@ -11,7 +11,7 @@ const Contact = () => {
     return (
         <Container className="contact-container text-center" fluid>
             <Container className="contact-box mt-3 pt-1 pb-5 pl-0 pr-0">
-                <h1 className="title mt-5">Contact</h1>
+                <h1 className="title mt-5" id="contact-title">Contact</h1>
                 <p className="mb-5 mt-1">
                     Please reach out if you'd like to purchase one of our pieces!
                     <br/>
@@ -28,7 +28,7 @@ const Contact = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={{span: 1, offset: 5}}>
+                    <Col xs={{span: 1, offset: 4}} sm={{span: 1, offset: 5}}>
                         <a target="_blank" href="https://www.instagram.com/beyondnatureco/" className="link-info" rel="noreferrer">
                             <FontAwesomeIcon icon={faInstagram} className="icon"/>
                         </a>

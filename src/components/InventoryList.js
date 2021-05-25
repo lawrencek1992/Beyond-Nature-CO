@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import firebase from '../firebase.js';
 import UserContext from '../context/UserContext.js'
@@ -110,6 +111,11 @@ const InventoryList = ({ message, setFlashMessage }) => {
                 })
                 }
             </Row>
+            <div className="highlights-message">
+                        <p>
+                            Please contact us <Link to="/inventory" className="highlights-link">here</Link> to make a purchase!
+                        </p>
+                    </div>
         </Container>
     )
 };

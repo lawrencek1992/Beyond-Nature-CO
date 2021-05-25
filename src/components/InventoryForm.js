@@ -79,7 +79,7 @@ const InventoryForm = ({ message, setFlashMessage }) => {
 
     return (
         <Container className="inventory-form-container pt-5 mt-5" fluid>
-            <h1 className="text-center title mb-4 mt-3">Add Inventory</h1>
+            <h1 className="text-center title mb-4 mt-3" id="inventory-form-title">Add Inventory</h1>
             <Form className="inventory-form p-4 mb-5" onSubmit={handleSubmit}>
                 <Form.Group controlId="photoUpload">
                     <Form.Label className="image">Image</Form.Label>

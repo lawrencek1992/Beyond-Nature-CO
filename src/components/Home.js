@@ -9,7 +9,7 @@ const Home = () => {
         <Container className="home-container text-center p-0" fluid>
             <PhotoCarousel />
             <Container className="about-container">
-                <h1 className="title pt-5 pb-2 mt-5" >
+                <h1 className="title pt-5 pb-2 mt-5" id="about-title" >
                     About
                 </h1>
                 <Container className="home-description mt-0 pt-0">

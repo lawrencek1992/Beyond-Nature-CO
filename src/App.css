@@ -17,6 +17,7 @@
 .App {
   background: var(--sky);
   color: var(--cerulean);
+  overflow-x: hidden;
 }
 
 .navbar-custom {
@@ -96,7 +97,8 @@
 
 /* Home */
 .carousel {
-  margin-top: 45px;
+  /* position: inline;  */
+  margin-top: 50px !important;
   max-height: 100%;
 }
 
@@ -105,22 +107,24 @@
 }
 
 .main-image {
-  height: auto;
   object-fit: contain;
+  width: 100vw !important;
 }
 
 .home-container {
+  background-color: var(--sky);
   color: var(--white);
-  height: 100vh;
-  overflow: scroll;
-  text-align: center;
+  margin-right: 0;
+  min-height: 100vh;
+  width: 105vw;
+  overflow-y: scroll;
 }
 
 .about-container {
-  text-align: center !important;
-  background-color: var(--mist) !important;
+  background-color: var(--mist);
   border-radius: 8px;
   opacity: 0.89;
+  max-width: 80vw;
 }
 
 .home-description {
@@ -135,12 +139,18 @@
   border-radius: 8px;
 }
 
+.caption {
+  color: var(--sky);
+  font-size: 0.8em;
+}
+
 /* Contact */
 .contact-container {
   padding-top: 5em;
   color: var(--white);
   height: 100vh;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .contact-box {
@@ -196,6 +206,10 @@
   color: var(--mist) !important;
 }
 
+.end-of-page {
+  overflow: hidden;
+}
+
 /* Login */
 .login-container{
   height: 100vh;
@@ -226,6 +240,7 @@
   height: 100vh;
   width: 100vw;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .inventory-form {
@@ -253,11 +268,10 @@
 }
 
 /* Inventory List */
-
-/* wtf why is this not working???? */
 .inventory-list-container{
   height: 100vh;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .inventory-card {
@@ -297,3 +311,162 @@
 }
 
 /* Media queries for responsive design */
+/* Extra Large Screens */
+@media (max-width: 1600px){
+  .inventory-form {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+
+  #about-title {
+    padding-top: 1em !important;
+  }
+
+  .headshot {
+    padding-top: 4em;
+    padding-bottom: 0.5em;
+  }
+
+  .caption {
+    padding-bottom: 0.5em !important;
+  }
+  
+  #contact-title {
+    padding-top: 1em;
+  }
+}
+
+/* Large tablets or small laptops */
+@media (max-width: 1200px) {
+  .contact-box {
+    margin-top: 5em !important;
+    max-width: 85vw;
+    padding-top: 3em !important;
+  }
+  
+  #contact-title {
+    margin-top: 0.01em !important;
+  }
+
+  .card-img {
+    max-height: 25vh;
+  }
+}
+
+/* Regular sized tablets */
+@media (max-width: 768px) {
+  .about-container {
+    margin-left: 4.8em;
+    margin-right: 4.8em;
+  }
+
+  .contact-box {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+    padding-top: 1em !important;
+    margin-top: 3em !important;
+  }
+
+  .inventory-form {
+    min-width: 80vw !important;
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+  }
+}
+
+/* Regular sized phones */
+@media (max-width: 480px) {
+  .about-container {
+    margin-left: 2.8em;
+    margin-right: 2.8em;
+    margin-top: 2em !important;
+  }
+
+  #about-title {
+    padding-top: 0.5em !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .home-description {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 0.85em;
+  }
+
+  .headshot {
+    max-width: 70vw;
+    padding-right: 1em !important;
+  }
+
+  .caption {
+    margin-bottom: 0 !important;
+  }
+
+  #contact-title {
+    margin-top: 0.01em !important;
+    padding-top: 0.5em !important;
+  }
+
+  .contact-box {
+    margin-top: 1.5em !important;
+  }
+
+  .icon {
+    padding-right: 0.1em;
+  }
+  
+  #inventory-list-title {
+    font-size: 3.8em;
+  }
+
+  .inventory-card {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+
+  .card-img {
+    min-height: 55vh;
+  }
+
+  #inventory-form-title {
+    font-size: 5em;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 380px) {
+  .about-container {
+    margin-left: 2em !important;
+  }
+
+  #inventory-form-title {
+    font-size: 3.7em;
+  }
+
+  .inventory-form {
+    margin-left: 0.1em !important;
+    margin-right: 0.1em !important;
+  }
+
+  .highlights-title {
+    font-size: 4em;
+  }
+
+  .photos {
+    padding-left: 1px;
+    margin-left: 1px;
+  }
+
+  .icons{
+    margin-right: 28px;
+  }
+
+  .login-container {
+    padding-left: 0 !important;
+    margin-left: 2em !important;
+  }
+
+  .email-input, .password-input {
+    width: 80vw;
+  }
+}

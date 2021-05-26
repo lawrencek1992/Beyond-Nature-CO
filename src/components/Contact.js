@@ -27,7 +27,7 @@ const Contact = () => {
                         (231) 690-1165
                     </Col>
                 </Row>
-                <Row>
+                <Row className="icons">
                     <Col xs={{span: 1, offset: 4}} sm={{span: 1, offset: 5}}>
                         <a target="_blank" href="https://www.instagram.com/beyondnatureco/" className="link-info" rel="noreferrer">
                             <FontAwesomeIcon icon={faInstagram} className="icon"/>

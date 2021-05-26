@@ -113,7 +113,7 @@ const InventoryList = ({ message, setFlashMessage }) => {
             </Row>
             <div className="highlights-message">
                         <p>
-                            Please contact us <Link to="/inventory" className="highlights-link">here</Link> to make a purchase!
+                            Please contact us <Link to="/contact" className="highlights-link">here</Link> to make a purchase!
                         </p>
                     </div>
         </Container>

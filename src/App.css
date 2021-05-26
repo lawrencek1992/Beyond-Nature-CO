@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
+/* Main styles */
 /* Save color scheme hex codes as variables for easy editing */
 :root {
   --sky: #cae4db;
@@ -12,14 +13,13 @@
   --white: #fff;
   --black: #000;
 }
-
-/* Main styles */
 .App {
   background: var(--sky);
   color: var(--cerulean);
   overflow-x: hidden;
 }
 
+/* Navbar */
 .navbar-custom {
   background-color: var(--cerulean);
   border-bottom: solid var(--mist) 3px;
@@ -97,7 +97,6 @@
 
 /* Home */
 .carousel {
-  /* position: inline;  */
   margin-top: 50px !important;
   max-height: 100%;
 }
@@ -144,129 +143,6 @@
   font-size: 0.8em;
 }
 
-/* Contact */
-.contact-container {
-  padding-top: 5em;
-  color: var(--white);
-  height: 100vh;
-  overflow: scroll;
-  overflow-x: hidden;
-}
-
-.contact-box {
-  background-color: var(--mist);
-  opacity: 0.9;
-  border-radius: 8px;
-  min-height: 80vh;
-  margin-bottom: 20px;
-}
-
-.icon {
-  font-size: 3em;
-  color: var(--sky);
-}
-
-.icon:hover {
-  font-size: 3.5em;
-  color: var(--honey);
-}
-
-/* Highlights */
-.highlights-container {
-  min-height: 100vh;
-  height: 100%;
-  width: 100vw;
-  background-color: var(--sky);
-}
-
-.highlights-title {
-  background-color: var(--mist);
-  color: var(--honey);
-  font-family: 'Zeyada', cursive;
-  font-size: 5.5em;
-  width: 100%;
-  margin: 0;
-}
-
-.highlights-link {
-  color: var(--mist);
-}
-
-.highlights-link:hover {
-  color: var(--honey);
-}
-
-.highlights-message {
-  font-family: 'Parisienne', cursive;
-  font-size: 2em;
-  color: var(--cerulean);
-}
-
-.spinner {
-  color: var(--mist) !important;
-}
-
-.end-of-page {
-  overflow: hidden;
-}
-
-/* Login */
-.login-container{
-  height: 100vh;
-}
-
-.email-input {
-  width: 35vw;
-}
-
-.password-input {
-  width: 35vw;
-}
-
-.btn-info {
-  color: var(--white) !important;
-  background-color: var(--cerulean) !important;
-  border: solid var(--cerulean) 1px;
-}
-
-.btn-info:hover {
-  background-color: var(--honey) !important;
-  color: var(--cerulean) !important;
-  border: solid var(--cerulean) 1px;
-}
-
-/* Inventory Form */
-.inventory-form-container {
-  height: 100vh;
-  width: 100vw;
-  overflow: scroll;
-  overflow-x: hidden;
-}
-
-.inventory-form {
-  background-color: var(--mist);
-  opacity: 0.9;
-  border-radius: 8px;
-}
-
-.form-label {
-  color: var(--cerulean);
-  font-weight: bold;
-}
-
-.upload-button {
-  background-color: var(--cerulean) !important;
-  border: none !important;
-  color: var(--white) !important;
-  border: solid 1px var(--cerulean) !important;
-}
-
-.upload-button:hover {
-  background-color: var(--honey) !important;
-  border: solid 1px var(--cerulean) !important;
-  color: var(--cerulean) !important;
-}
-
 /* Inventory List */
 .inventory-list-container{
   height: 100vh;
@@ -308,6 +184,129 @@
 .inventory-icon:hover {
   color: var(--honey);
   font-size: 1.1em;
+}
+
+/* Inventory Form */
+.inventory-form-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.inventory-form {
+  background-color: var(--mist);
+  opacity: 0.9;
+  border-radius: 8px;
+}
+
+.form-label {
+  color: var(--cerulean);
+  font-weight: bold;
+}
+
+.upload-button {
+  background-color: var(--cerulean) !important;
+  border: none !important;
+  color: var(--white) !important;
+  border: solid 1px var(--cerulean) !important;
+}
+
+.upload-button:hover {
+  background-color: var(--honey) !important;
+  border: solid 1px var(--cerulean) !important;
+  color: var(--cerulean) !important;
+}
+
+/* Highlights */
+.highlights-container {
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+  background-color: var(--sky);
+}
+
+.highlights-title {
+  background-color: var(--mist);
+  color: var(--honey);
+  font-family: 'Zeyada', cursive;
+  font-size: 5.5em;
+  width: 100%;
+  margin: 0;
+}
+
+.highlights-link {
+  color: var(--mist);
+}
+
+.highlights-link:hover {
+  color: var(--honey);
+}
+
+.highlights-message {
+  font-family: 'Parisienne', cursive;
+  font-size: 2em;
+  color: var(--cerulean);
+}
+
+.spinner {
+  color: var(--mist) !important;
+}
+
+.end-of-page {
+  overflow: hidden;
+}
+
+/* Contact */
+.contact-container {
+  padding-top: 5em;
+  color: var(--white);
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.contact-box {
+  background-color: var(--mist);
+  opacity: 0.9;
+  border-radius: 8px;
+  min-height: 80vh;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 3em;
+  color: var(--sky);
+}
+
+.icon:hover {
+  font-size: 3.5em;
+  color: var(--honey);
+}
+
+/* Login */
+.login-container{
+  height: 100vh;
+}
+
+.email-input {
+  width: 35vw;
+}
+
+.password-input {
+  width: 35vw;
+}
+
+.btn-info {
+  color: var(--white) !important;
+  background-color: var(--cerulean) !important;
+  border: solid var(--cerulean) 1px;
+}
+
+.btn-info:hover {
+  background-color: var(--honey) !important;
+  color: var(--cerulean) !important;
+  border: solid var(--cerulean) 1px;
 }
 
 /* Media queries for responsive design */

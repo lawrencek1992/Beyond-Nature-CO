@@ -79,13 +79,13 @@ const InventoryList = ({ message, setFlashMessage }) => {
             <Row>
                 {inventoryItems && inventoryItems.map(item => {
                     return (
-                        <Container className="col-md-3 col-sm-4 mb-3">
+                        <Container className="col-md-3 col-sm-4 mb-3" key={item.dateAdded}>
                             <Card className="inventory-card mb-3">
                             <Card.Img 
                                 variant="top" 
                                 src={item.imgURL} 
                                 alt={item.description} 
-                                key={item.dateAdded}
+                                // key={item.dateAdded}
                                 className="card-img"
                             />
                             <Card.Body className="card-body text-center">

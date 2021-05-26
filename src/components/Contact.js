@@ -10,8 +10,8 @@ import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 const Contact = () => {
     return (
         <Container className="contact-container text-center" fluid>
-            <Container className="contact-box mt-3 pt-1 pb-5 pl-0 pr-0">
-                <h1 className="title mt-5" id="contact-title">Contact</h1>
+            <Container className="contact-box mt-1 pt-1 pb-5 pl-0 pr-0">
+                <h1 className="title" id="contact-title">Contact</h1>
                 <p className="mb-5 mt-1">
                     Please reach out if you'd like to purchase one of our pieces!
                     <br/>

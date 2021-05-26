@@ -1,88 +1,40 @@
-Sources: 
-*https://dev.to/hadi/infinite-scroll-in-firebase-firestore-and-react-js-55g3 
-for help writing functions to pull photos from firestore
-    -also modelled the getInventoryItems function in InventoryList.js off this
+# Beyond Nature CO Website
 
-*https://stackoverflow.com/questions/54508693/detect-bottom-of-page-to-fetch-more-data-in-react
-for the function fetchMorePosts() that detects when a user scrolls to the bottom of the page
+#### Build by: Kelly Lawrence
+_If you like this work, I am seeking a front end/UI developer position. Please email me at lawrencek1992@gmail.com if you'd like to work together._
 
-*https://benmcmahen.com/uploading-images-with-firebase-and-react/
-tutorial using filepond to upload images to firebase storage
+### Installation
 
-*Filepond
-plugin to easily drag and drop/select photos to upload
+Clone the repository and use **node package manager** to install. 
 
+```bash
+https://github.com/lawrencek1992/Beyond-Nature-CO.git
+npm install
+```
 
+### Usage
 
+I used **Google Firebase** for user authentication, cloud storage, and firestore. You will need to set up your own project in firebase, and you will need to create your own **firebase.js** file with **your own firebase configuration information**.
 
+### Built With:
 
-# Getting Started with Create React App
+* React (with hooks)
+* Bootstrap
+* Google Firebase
+* Filepond
+* Font Awesome Icons
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Sources:
+* React Documentation:
+    https://reactjs.org/docs/getting-started.html
+* Firebase Documentation:
+    https://firebase.google.com/docs/guides
+* React Font Awesome Documentation:
+    https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react
+* I used this File Pond Tutorial to add a Filepond plugin to my app to allow users to upload images to Firestore:
+    https://benmcmahen.com/uploading-images-with-firebase-and-react/
+* Modelled my photosFirstBatch, photosNextBatch, and getInventoryItems functions off the functions in this React Firestore tutorial:
+    https://dev.to/hadi/infinite-scroll-in-firebase-firestore-and-react-js-55g3
+* I used code from this Stack Overflow discussion to write my fetchMorePosts function, which detects when a user scrolls to the bottom of the page:
+    https://stackoverflow.com/questions/54508693/detect-bottom-of-page-to-fetch-more-data-in-react
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

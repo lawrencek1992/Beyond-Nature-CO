@@ -87,7 +87,7 @@ const Highlights = () => {
             <h1 className="highlights-title pt-3 pb-1 mb-3">
                 Highlights
             </h1>
-            <Container className="row pr-0" fluid>
+            <Container className="row pr-0 photos" fluid>
                 {
                     photos && photos.map(photo => {
                         return (

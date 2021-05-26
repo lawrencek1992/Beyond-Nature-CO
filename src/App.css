@@ -179,6 +179,9 @@
   text-align: left;
   background-color: var(--mist);
   color: var(--sky);
+  position: absolute;
+  bottom: 30px;
+  left: 44%;
 }
 
 .inventory-icon:hover {

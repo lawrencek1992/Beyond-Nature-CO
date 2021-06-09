@@ -112,8 +112,6 @@ const App = (props) => {
                   render={() => 
                     !UserContext.isAuthenticated 
                       ? <Login
-                          setFlashMessage={setFlashMessage}
-                          message={message}
                           errorMessage={errorMessage}
                           showEmailTooltip={showEmailTooltip}
                           showPasswordTooltip={showPasswordTooltip}

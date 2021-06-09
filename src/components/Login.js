@@ -1,13 +1,20 @@
 import React, { useState, useContext, useRef } from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useHistory } from 'react-router-dom';
 import { Button, Form, Overlay, Tooltip } from 'react-bootstrap';
+
+import firebase from '../firebase';
 import UserContext from '../context/UserContext';
+import PasswordReset from './PasswordReset';
+import ResetSuccess from './ResetSuccess';
 
 const Login = ({message, setFlashMessage, errorMessage, showEmailTooltip, showPasswordTooltip }) => {
     const { onLogin } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPasswordReset, setShowPasswordReset] = useState(false);
+    const [showResetSuccess, setShowResetSuccess] = useState(false);
+
+    const history = useHistory();
 
     const emailInput = useRef(null);
     const passwordInput = useRef(null);
@@ -16,6 +23,10 @@ const Login = ({message, setFlashMessage, errorMessage, showEmailTooltip, showPa
         event.preventDefault();
         onLogin(email, password);
     };
+
+    const resetPassword = () => {
+        setShowPasswordReset(true);
+    }
 
     return (
         <Form 
@@ -81,9 +92,16 @@ const Login = ({message, setFlashMessage, errorMessage, showEmailTooltip, showPa
             </Link>
             <Button 
                 className="btn btn-warning"
+                onClick={() => resetPassword()}
             >
                 Reset Password
             </Button>
+            <PasswordReset 
+                showPasswordReset={showPasswordReset}
+                setShowPasswordReset={setShowPasswordReset}
+                setShowResetSuccess={setShowResetSuccess}
+            />
+            <ResetSuccess showResetSuccess={showResetSuccess} setShowResetSuccess={setShowResetSuccess} />
         </Form>
     )
 };

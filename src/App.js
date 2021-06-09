@@ -6,6 +6,8 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { useStorageState } from "react-storage-hooks";
+import { useHistory } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import firebase from "./firebase";
@@ -23,6 +25,11 @@ import InventoryList from './components/InventoryList.js';
 const App = (props) => {
   const [user, setUser] = useStorageState(localStorage, `state-user`, {});
   const [message, setMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [showEmailTooltip, setShowEmailTooltip] = useState(false);
+  const [showPasswordTooltip, setShowPasswordTooltip] = useState(false);
+
+  const history = useHistory();
 
   const setFlashMessage = (message) => {
     setMessage(message);
@@ -40,8 +47,30 @@ const App = (props) => {
             email: response.user["email"],
             isAuthenticated: true,
           });
+          setFlashMessage(`login`);
+          history.push("/");
       })
-      .catch((error)  => console.error(error));
+      .catch((error)  => {
+        if (error.code === "auth/wrong-password") {
+          setErrorMessage("Invalid password");
+          setShowPasswordTooltip(true);
+          setTimeout(() => {
+            setShowPasswordTooltip(false);
+          }, 3000);
+        } else if (error.code === "auth/user-not-found") {
+          setErrorMessage("Email address not found");
+          setShowEmailTooltip(true);
+          setTimeout(() => {
+            setShowEmailTooltip(false);
+          }, 3000);
+        } else if (error.code === "auth/too-many-requests") {
+          setErrorMessage("Too many attempts. Try again later.");
+          setShowPasswordTooltip(true);
+          setTimeout(() => {
+            setShowPasswordTooltip(false);
+          }, 3000);
+        }
+      });
   };
   
   const onLogout = () => {
@@ -84,7 +113,10 @@ const App = (props) => {
                     !UserContext.isAuthenticated 
                       ? <Login
                           setFlashMessage={setFlashMessage}
-                          message={message} 
+                          message={message}
+                          errorMessage={errorMessage}
+                          showEmailTooltip={showEmailTooltip}
+                          showPasswordTooltip={showPasswordTooltip}
                         /> 
                       : <Redirect to="/inventory-form" />
                   }

@@ -1,14 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Modal, Button, Form, Overlay, Tooltip } from 'react-bootstrap';
 import firebase from '../firebase';
 
 const PasswordReset = ({ showPasswordReset, setShowPasswordReset, setShowResetSuccess }) => {
     const [showTooltip, setShowTooltip] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
     const [email, setEmail] = useState(null);
-
-    const history = useHistory();
 
     const emailInput = useRef(null);
 
@@ -28,14 +25,14 @@ const PasswordReset = ({ showPasswordReset, setShowPasswordReset, setShowResetSu
             .catch((error) => {
                 if (error.code === "auth/user-not-found") {
                     let errorMessage = "Email address not found!"
-                    setErrorMessage(errorMessage);
+                    setErrorMsg(errorMessage);
                     setShowTooltip(true);
                     setTimeout(() => {
                         setShowTooltip(false)
                     }, 3000);
                 } else if (error.code === "auth/invalid-email") {
                     let errorMessage = "Invalid email format."
-                    setErrorMessage(errorMessage);
+                    setErrorMsg(errorMessage);
                     setShowTooltip(true);
                     setTimeout(() => {
                         setShowTooltip(false);
@@ -72,10 +69,13 @@ const PasswordReset = ({ showPasswordReset, setShowPasswordReset, setShowResetSu
                             }}
                         />
                     </Form.Group>
-                    <Overlay target={emailInput.current} show={showTooltip} placement="above">
+                    <Overlay 
+                        target={emailInput.current} 
+                        show={showTooltip} 
+                        placement="top">
                         {(props) => (
                             <Tooltip {...props}>
-                                {errorMessage}
+                                {errorMsg}
                             </Tooltip>
                         )}
                     </Overlay>

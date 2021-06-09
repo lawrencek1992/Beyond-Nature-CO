@@ -312,6 +312,12 @@
   border: solid var(--cerulean) 1px;
 }
 
+/* Password Reset Modals */
+#custom-modal {
+  background-color: var(--sky);
+  color: var(--cerulean);
+}
+
 /* Media queries for responsive design */
 /* Extra Large Screens */
 @media (max-width: 1600px){

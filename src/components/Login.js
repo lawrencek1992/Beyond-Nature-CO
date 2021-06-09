@@ -73,12 +73,17 @@ const Login = ({message, setFlashMessage, errorMessage, showEmailTooltip, showPa
                 Login
             </Button>
             <Link 
-                className="btn btn-secondary" 
+                className="btn btn-secondary mr-3" 
                 type="cancel" 
                 to="/"
             >
                 Cancel
             </Link>
+            <Button 
+                className="btn btn-warning"
+            >
+                Reset Password
+            </Button>
         </Form>
     )
 };

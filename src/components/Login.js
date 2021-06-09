@@ -1,8 +1,7 @@
 import React, { useState, useContext, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button, Form, Overlay, Tooltip } from 'react-bootstrap';
 
-import firebase from '../firebase';
 import UserContext from '../context/UserContext';
 import PasswordReset from './PasswordReset';
 import ResetSuccess from './ResetSuccess';
@@ -13,8 +12,6 @@ const Login = ({message, setFlashMessage, errorMessage, showEmailTooltip, showPa
     const [password, setPassword] = useState('');
     const [showPasswordReset, setShowPasswordReset] = useState(false);
     const [showResetSuccess, setShowResetSuccess] = useState(false);
-
-    const history = useHistory();
 
     const emailInput = useRef(null);
     const passwordInput = useRef(null);
@@ -55,7 +52,7 @@ const Login = ({message, setFlashMessage, errorMessage, showEmailTooltip, showPa
                     </Tooltip>
                 )}
             </Overlay>
-            <Form.Group>
+            <Form.Group className="mb-4">
                 <Form.Label htmlFor="password">Password:</Form.Label>
                 <br />
                 <Form.Control 
@@ -77,21 +74,21 @@ const Login = ({message, setFlashMessage, errorMessage, showEmailTooltip, showPa
                 )}
             </Overlay>
             <Button 
-                className="btn btn-info mr-3" 
+                className="btn btn-info mr-3 mb-3" 
                 type="submit" 
                 disabled={!email || !password}
             >
                 Login
             </Button>
             <Link 
-                className="btn btn-secondary mr-3" 
+                className="btn btn-secondary mr-3 mb-3" 
                 type="cancel" 
                 to="/"
             >
                 Cancel
             </Link>
             <Button 
-                className="btn btn-warning"
+                className="btn btn-warning mb-3"
                 onClick={() => resetPassword()}
             >
                 Reset Password

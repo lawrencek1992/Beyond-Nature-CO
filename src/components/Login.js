@@ -6,7 +6,7 @@ import UserContext from '../context/UserContext';
 import PasswordReset from './PasswordReset';
 import ResetSuccess from './ResetSuccess';
 
-const Login = ({message, setFlashMessage, errorMessage, showEmailTooltip, showPasswordTooltip }) => {
+const Login = ({ errorMessage, showEmailTooltip, showPasswordTooltip }) => {
     const { onLogin } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

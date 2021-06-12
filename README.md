@@ -1,6 +1,6 @@
 # Beyond Nature CO Website
 
-#### Build by: Kelly Lawrence
+#### Built by: Kelly Lawrence
 _If you like this work, I am seeking a front end/UI developer position. Please email me at lawrencek1992@gmail.com if you'd like to work together._
 
 ### Installation

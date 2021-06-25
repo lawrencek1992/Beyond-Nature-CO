@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import logo from '../photos/carousel-photos/Logo.png';
 import flowerAndLeafBirdbath from '../photos/carousel-photos/flower-and-leaf-birdbath.png';
 import yellowBirdbath from '../photos/carousel-photos/yellow-birdbath.png';
-import birdOnLeaf from '../photos/carousel-photos/bird-on-leaf.png';
+import blueBirdbath from '../photos/carousel-photos/blue-birdbath.png';
 
 const PhotoCarousel = () => {
     return (
@@ -32,7 +32,7 @@ const PhotoCarousel = () => {
           <Carousel.Item className="carousel-item" interval={2500}>
             <img
               className="d-block w-100 main-image"
-              src={birdOnLeaf}
+              src={blueBirdbath}
               alt="A birdbath made of green porcelain leaves"
             />
           </Carousel.Item>
